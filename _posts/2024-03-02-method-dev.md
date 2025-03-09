@@ -43,13 +43,13 @@ Often (and it should be always) a new method starts with a motivation. One can g
 
 1. **Lack of data** — Paper X have answered a biological question, but enough data was not produced to prove it with statistical significance.
 
-2. **Lack of resolution** — The results produced in the paper are noisy. **Ideal** place to invent a method, you can first formulate a problem and than apply *Teng’s list* to the problem.
+2. **Lack of resolution** — The results produced in the paper are noisy. **Ideal** place to invent a method, you can first formulate a problem and than apply _Teng’s list_ to the problem.
 
 3. **Inconsistency in findings** — If multiple papers or technology papers are published in the same biological domain and the results are somewhat contradictory, that’s a perfect space to see if the methods used across the papers are consistent, or the assumptions taken to solve these problems are right.
 
 4. **Lack of accuracy** — There is a need for a better model to close the gaps in the current data.
 
-5. **Lack of theoretical understanding** — The theory behind the model is not clear therefore there is a gap explaining the observed data. Again an ideal place to start with *Teng’s list*.
+5. **Lack of theoretical understanding** — The theory behind the model is not clear therefore there is a gap explaining the observed data. Again an ideal place to start with _Teng’s list_.
 
 Given the currency of academic world **is** publishing, one way to move forward is reading papers effectively which definitely involve summarizing. One effective way of summarizing is the following —
 
