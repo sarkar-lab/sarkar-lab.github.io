@@ -60,7 +60,6 @@ on:
       - "!INSTALL.md"
       - "!README.md"
   workflow_dispatch:
-
 permissions:
   contents: write
 
