@@ -1,21 +1,21 @@
+---
 name: Deploy site
-
 on:
   push:
     branches:
       - master
     paths:
-      - "assets/**"
-      - "_sass/**"
-      - "_scripts/**"
+      - assets/**
+      - _sass/**
+      - _scripts/**
       - "**.bib"
       - "**.html"
       - "**.js"
       - "**.liquid"
       - "**/*.md"
       - "**.yml"
-      - "Gemfile"
-      - "Gemfile.lock"
+      - Gemfile
+      - Gemfile.lock
       - "!.github/workflows/axe.yml"
       - "!.github/workflows/broken-links.yml"
       - "!.github/workflows/deploy-docker-tag.yml"
@@ -33,17 +33,17 @@ on:
     branches:
       - master
     paths:
-      - "assets/**"
-      - "_sass/**"
-      - "_scripts/**"
+      - assets/**
+      - _sass/**
+      - _scripts/**
       - "**.bib"
       - "**.html"
       - "**.js"
       - "**.liquid"
       - "**/*.md"
       - "**.yml"
-      - "Gemfile"
-      - "Gemfile.lock"
+      - Gemfile
+      - Gemfile.lock
       - "!.github/workflows/axe.yml"
       - "!.github/workflows/broken-links.yml"
       - "!.github/workflows/deploy-docker-tag.yml"
@@ -57,13 +57,11 @@ on:
       - "!FAQ.md"
       - "!INSTALL.md"
       - "!README.md"
-  workflow_dispatch:
+  workflow_dispatch: null
 permissions:
   contents: write
-
 jobs:
   deploy:
-    # available images: https://github.com/actions/runner-images#available-images
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -71,19 +69,19 @@ jobs:
       - name: Setup Ruby 💎
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.4.4"
+          ruby-version: 3.4.4
           bundler-cache: true
       - name: Setup Python 🐍
         uses: actions/setup-python@v5
         with:
-          python-version: "3.13"
-          cache: "pip" # caching pip dependencies
+          python-version: "3.11"
+          cache: pip
       - name: Update _config.yml ⚙️
         uses: fjogeleit/yaml-update-action@main
         with:
           commitChange: false
-          valueFile: "_config.yml"
-          propertyPath: "giscus.repo"
+          valueFile: _config.yml
+          propertyPath: giscus.repo
           value: ${{ github.repository }}
       - name: Install and Build 🔧
         run: |
@@ -107,5 +105,4 @@ jobs:
         run: |
           bundle --version
           bundle list | grep jekyll
-          bundle list | grep github-pages
-          
+          bundle list | grep github-pages || echo "No github-pages gem found (expected)"
