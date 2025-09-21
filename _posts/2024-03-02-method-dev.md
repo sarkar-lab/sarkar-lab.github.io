@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Method development in computational biology
-date: 2021-06-08
+date: 2025-09-21
 description: I absoltuely loved Teng Gao's blog on method development
 usemathjax: true
 giscus_comments: true
@@ -27,7 +27,7 @@ Quoting Teng --
 
 Developing a new computational method for genomics is exciting but can also be daunting at first. It seems to be as much an art as it is an exact science. Here I summarize some lessons learned having gone through the whole process once:
 
-1. **Avoid reinventing the wheel.** Reuse existing solutions that people have tested before and innovate on top of them.
+1. **Avoid reinventing the wheel.** Reuse existing solutions that people have tested before and innovate on top of them, **unless** the wheel is broken, that is no solution in the literature space does the adequate job. 
 2. **Simplicity is key.** Fancy math does not always lead to better results. Before applying any complex techniques, try a simple one first.
 3. **Iterate fast and optimize later.** Experimental code does not have to be tidy or efficient (it just has to be correct). Optimize once you know something works.
 4. **Establish a benchmark early on.** A benchmark is not only essential for demonstrating performance improvements in the end, but also for testing out various approaches while developing a tool.
