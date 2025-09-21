@@ -14,9 +14,6 @@
       year: 2020
       description:
         - "Improving storage and alignment methodologies for RNA-seq data"
-    - title: MS in Computer Science
-      institution: Stony Brook University, Stony Brook, NY, US
-      year: 2016
     - title: M.Tech in Computer Science
       institution: Indian Statistical Institute, Kolkata, India
       description:
@@ -29,9 +26,12 @@
 - title: Experience
   type: time_table
   contents:
-    - title: Princeton Ludwig Scholar and Postdoctoral Research Associate
+    - title: Assistant Professor, College of Connected Computing
+      institution: Vanderbilt University, Nashville, Tennessee, USA
+      year: 2025-present
+    - title: Postdoctoral Research Associate (Ludwig Scholar)
       institution: Princeton University, New Jersey, USA
-      year: 2023-present
+      year: 2023-2025
       description:
         - Spatial Transcriptomics
         - Machine Learning
