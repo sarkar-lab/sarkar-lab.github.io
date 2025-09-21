@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
+
+gem 'jekyll'
+
 group :jekyll_plugins do
     gem 'classifier-reborn'
-    gem 'csv'
-    gem 'jekyll'
     gem 'jekyll-archives'
     gem 'jekyll-email-protect'
     gem 'jekyll-feed'
@@ -16,16 +17,20 @@ group :jekyll_plugins do
     gem 'jekyll-sitemap'
     gem 'jekyll-toc'
     gem 'jekyll-twitter-plugin'
+
+end
+
+
+group :other_plugins do
+    gem 'csv'
+    gem 'feedjira'
+    gem 'httparty'
     gem 'jemoji'
     gem 'logger'
     gem 'mini_racer'
     gem 'observer'
-    gem 'unicode_utils'
-    gem 'webrick'
-end
-group :other_plugins do
-    gem 'feedjira'
-    gem 'httparty'
+    # gem 'unicode_utils'
+    # gem 'webrick'
 end
 
 #gem "observer", "~> 0.1.2"

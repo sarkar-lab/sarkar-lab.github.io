@@ -89,7 +89,6 @@ jobs:
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick
           pip3 install --upgrade nbconvert
-          bundle install
           export JEKYLL_ENV=production
           bundle install
           bundle exec jekyll build
@@ -104,4 +103,9 @@ jobs:
           branch: gh-pages
           folder: _site
           clean: true
+      - name: Debug Bundle 🔍
+        run: |
+          bundle --version
+          bundle list | grep jekyll
+          bundle list | grep github-pages
           
