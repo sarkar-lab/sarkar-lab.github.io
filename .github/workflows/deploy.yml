@@ -55,6 +55,26 @@ permissions:
   contents: write
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Build 🔧
+        run: |
+          pip3 install --upgrade jupyter
+          export JEKYLL_ENV=production
+          bundle exec jekyll build --lsi
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
   deploy:
     # available images: https://github.com/actions/runner-images#available-images
     runs-on: ubuntu-latest
