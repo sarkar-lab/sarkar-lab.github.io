@@ -38,11 +38,58 @@ layout: default
       </div>
     {% endif %}
 
+    <!-- Carousel -->
     <div class="clearfix">{{ content }}</div>
+
+    {% if page.images and page.images.slider %}
+      <h2 class="mt-3 mb-3">
+        <i class="fas fa-flask me-2" aria-hidden="true"></i> Research Highlights
+      </h2>
+      <div class="swiper aboutCarousel mb-5 mt-1">
+        <div class="swiper-wrapper">
+          {% assign imgs = page.images.list | default: "" %}
+          {% for src in imgs %}
+            <div class="swiper-slide">
+              <img src="{{ src }}" alt="" style="width:100%;height:auto;object-fit:cover;">
+            </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    {% endif %}
+    {% if page.images and page.images.slider %}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+    (function () {
+      function start(){
+        if (!window.Swiper) return;
+        const el = document.querySelector('.aboutCarousel');
+        if (!el || el.dataset.inited) return;
+        el.dataset.inited = '1';
+        new Swiper('.aboutCarousel', {
+          loop: true,
+          autoplay: { delay: 2500, disableOnInteraction: false, pauseOnMouseEnter: true },
+          slidesPerView: 1,
+          spaceBetween: 12,
+          pagination: { el: '.aboutCarousel .swiper-pagination', clickable: true },
+          navigation: { nextEl: '.aboutCarousel .swiper-button-next', prevEl: '.aboutCarousel .swiper-button-prev' }
+        });
+      }
+      document.addEventListener('DOMContentLoaded', start);
+      document.addEventListener('turbolinks:load', start);
+    })();
+    </script>
+    {% endif %}
+
+
+
 
     <!-- News -->
     {% if page.news and site.announcements.enabled %}
       <h2>
+        <i class="fas fa-bullhorn" aria-hidden="true"></i>
         <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
       </h2>
       {% include news.liquid limit=true %}

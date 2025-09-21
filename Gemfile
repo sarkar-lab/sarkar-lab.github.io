@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 group :jekyll_plugins do
     gem 'classifier-reborn'
+    gem 'csv'
     gem 'jekyll'
     gem 'jekyll-archives'
     gem 'jekyll-email-protect'
@@ -16,7 +17,9 @@ group :jekyll_plugins do
     gem 'jekyll-toc'
     gem 'jekyll-twitter-plugin'
     gem 'jemoji'
+    gem 'logger'
     gem 'mini_racer'
+    gem 'observer'
     gem 'unicode_utils'
     gem 'webrick'
 end
@@ -24,3 +27,5 @@ group :other_plugins do
     gem 'feedjira'
     gem 'httparty'
 end
+
+#gem "observer", "~> 0.1.2"
