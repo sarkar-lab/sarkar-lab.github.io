@@ -13,7 +13,7 @@ tags:
   - science
 ---
 
-## Teng's wisdom
+## Teng's Method of Success (TMS)
 
 My dear friend and colleague [Teng Gao](https://teng-gao.github.io/) posted a short blog last year on developing computational methods in the space of computational biology. I feel his pointers are extremely insightful to avoid possible pitfalls and long-running rabbit holes that are very easy to fall into while working with biological data. Moreover Teng's ideas can be easily translated to other domains of applied science. In my academic life I have way more failed long rounding projects than I had successful projects.
 
@@ -25,21 +25,21 @@ Teng mentioned in his [blog](https://teng-gao.github.io/blog/2023/method/) a lis
 
 Quoting Teng --
 
-Developing a new computational method for genomics is exciting but can also be daunting at first. It seems to be as much an art as it is an exact science. Here I summarize some lessons learned having gone through the whole process once:
+> Developing a new computational method for genomics is exciting but can also be daunting at first. It seems to be as much an art as it is an exact science. Here I summarize some lessons learned having gone through the whole process once:
 
 1. **Avoid reinventing the wheel.** Reuse existing solutions that people have tested before and innovate on top of them, **unless** the wheel is broken, in other words no solution in the existing literature does the job adequately.
 2. **Simplicity is key.** Fancy math does not always lead to better results. Before applying any complex techniques, try a simple one first.
 3. **Iterate fast and optimize later.** Experimental code does not have to be tidy or efficient (it just has to be correct). Optimize once you know something works.
 4. **Establish a benchmark early on.** A benchmark is not only essential for demonstrating performance improvements in the end, but also for testing out various approaches while developing a tool.
 5. **If you can’t solve a big problem, solve a subpart first.** Similarly, if you can’t solve a general problem, first solve a specific case. Recognize inter-dependencies of sub-problems and modularize. Eventually you will get there!
-6. **Be systematic.** I spent a lot of time adjusting model parameters on an ad-hoc basis in order to make my method work better for specific cases. What really helped me understand how things work was systematically studying the effect of different parameter values across all possible scenarios.
+6. **Be systematic.** I spent a lot of time adjusting model parameters on an ad-hoc basis in order to make my method work better for specific cases. What really helped me understand how things work was systematically studying the effect of different parameter values across all possible scenarios. My postdoc advisor Ben used to call this *random walk*. Avoid it. 
 7. **Abstraction is the best way to make a method generalize.** I remember a time when I kept finding new cases where my method breaks down. Instead of addressing each problem individually, it was much better to summarize them into classes of errors, and solve them all at once by extending the model.
 
 If I translate the question by Sydney Brenner, the above transition can be summarized as,
 
-New technology —> **New method** —> **New discovery**
+## New technology → **New method** → **New discovery**
 
-Often (and it should be always) a new method starts with a motivation. One can generate a method just for method’s sake, but in applied science these papers are rarely useful. When you read a new technology/data paper, to find motives and consequently find motivation, you can ask yourself some question. We may have ask these questions anyway, but writing them in clear words might be more helpful. Some motivations could be —
+Often (and it should be always) a new method starts with a motivation. One can generate a method just for method’s sake, but in applied science these papers are rarely useful. When you read a new technology/data paper, to find motives and consequently find motivation, consider asking some questions. For example,
 
 1. **Lack of data** — Paper X have answered a biological question, but enough data was not produced to prove it with statistical significance.
 
@@ -53,8 +53,8 @@ Often (and it should be always) a new method starts with a motivation. One can g
 
 Given the currency of academic world **is** publishing, one way to move forward is reading papers effectively which definitely involve summarizing. One effective way of summarizing is the following —
 
-Summarizing a paper — QEC trick
+Summarizing a paper — **QEC** trick
 
-- Make connections between paper using https://researchrabbitapp.com/ or such tools. Question, Evidence and Conclusion. One needs to highlight these each time he/she reads a paper.
+- Make connections between paper using https://researchrabbitapp.com/ or such tools. **Question**, **Evidence** and **Conclusion**. One needs to highlight these each time he/she reads a paper.
 
 People hailing from CS are in general not technology creators (leaving a few exceptions). We as CS Ph.Ds primarily work on technologies invented by other folks. Finding a computational problem that is both nontrivial and interesting to biologists is reaching almost half way to the goal of publishing good computational biology paper. (To be cont.)
