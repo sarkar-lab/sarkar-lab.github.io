@@ -15,9 +15,9 @@ tags:
 
 ## Teng's wisdom
 
-My dear friend and colleague [Teng Gao](https://teng-gao.github.io/) posted a short blog last year on developing computational methods in the space of computational biology. I feel his pointers are extremely insightful to avoid possible pitfalls and long-running rabbitholes that are very easy to fall into while working with biological data. Moreover Teng's ideas can be easily translated to other domains of applied science. In my academic life I have way more failed long rounding projects than I had successful projects.
+My dear friend and colleague [Teng Gao](https://teng-gao.github.io/) posted a short blog last year on developing computational methods in the space of computational biology. I feel his pointers are extremely insightful to avoid possible pitfalls and long-running rabbit holes that are very easy to fall into while working with biological data. Moreover Teng's ideas can be easily translated to other domains of applied science. In my academic life I have way more failed long rounding projects than I had successful projects.
 
-Research is hard, so sometimes these long efforts fail and we can't do much about that. But, often we can avoid evident failures if we become strategic about research. This strategization can save careers and undue anxiety and depression. Therefore, I felt I can reproduce Teng's main ideas and further extend them a bit from my own experience.
+Research is hard, so sometimes these long efforts fail and we can't do much about that. But, often we can avoid evident failures if we become strategic about research. This act of strategizing can save careers form undue anxiety and depression. Therefore, I felt I can reproduce Teng's main ideas and further extend them a bit from my own experience.
 
 Teng mentioned in his [blog](https://teng-gao.github.io/blog/2023/method/) a list of common strategies to avoid long-failures and quick iterations. I will refer to the his list as ``TMS''(short for Teng's method of success).
 
@@ -27,7 +27,7 @@ Quoting Teng --
 
 Developing a new computational method for genomics is exciting but can also be daunting at first. It seems to be as much an art as it is an exact science. Here I summarize some lessons learned having gone through the whole process once:
 
-1. **Avoid reinventing the wheel.** Reuse existing solutions that people have tested before and innovate on top of them, **unless** the wheel is broken, that is no solution in the literature space does the adequate job. 
+1. **Avoid reinventing the wheel.** Reuse existing solutions that people have tested before and innovate on top of them, **unless** the wheel is broken, in other words no solution in the existing literature does the job adequately.
 2. **Simplicity is key.** Fancy math does not always lead to better results. Before applying any complex techniques, try a simple one first.
 3. **Iterate fast and optimize later.** Experimental code does not have to be tidy or efficient (it just has to be correct). Optimize once you know something works.
 4. **Establish a benchmark early on.** A benchmark is not only essential for demonstrating performance improvements in the end, but also for testing out various approaches while developing a tool.
