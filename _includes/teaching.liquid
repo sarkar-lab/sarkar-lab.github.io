@@ -1,0 +1,15 @@
+<!-- _includes/teaching.liquid -->
+{% if project.nav != false %}
+<div class="teaching-item" style="margin-bottom: 1.5rem;">
+  <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}" class="teaching-link" style="text-decoration: none; display: block;">
+    <div class="course-compact" style="border: 1px solid #e0e0e0; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); background: white;">
+      <div class="course-right">
+        <h5 class="course-name" style="margin: 0; color: #333;">{{ project.title }}</h5>
+        {% if project.semester or project.type %}
+        <span class="course-info" style="color: #666; font-size: 0.9rem; display: block; margin-top: 0.25rem;">{{ project.type }}{% if project.type and project.semester %} • {% endif %}{{ project.semester }}</span>
+        {% endif %}
+      </div>
+    </div>
+  </a>
+</div>
+{% endif %}

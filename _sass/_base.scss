@@ -609,6 +609,38 @@ footer.sticky-bottom {
   }
 }
 
+// Teaching 
+
+.teaching {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr; // Single column layout
+    gap: 1.5rem; // Add space between cards
+    margin-top: 2rem;
+  }
+  
+  // Alternative if using flexbox:
+  .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; // Space between items
+  }
+  
+  // If gap doesn't work (older browsers), use margin:
+  .grid-item,
+  .teaching-item {
+    margin-bottom: 1.5rem;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .course-compact:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15) !important;
+    transform: translateY(-2px);
+  }
+}
+
 // Projects
 
 .projects {

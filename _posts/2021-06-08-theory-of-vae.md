@@ -10,7 +10,7 @@ toc:
 tags:
   - machine_learning
   - deep_leaning
-  - derivarions
+  - derivations
 ---
 
 ## Theory of variational inference
