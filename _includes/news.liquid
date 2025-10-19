@@ -1,5 +1,5 @@
 <div class="news">
-  {% if site.news != blank %}
+  {% if page.show_news != false and site.news != blank %}
     {% assign news_size = site.news | size %}
     <div
       class="table-responsive"
@@ -8,7 +8,7 @@
       {% endif %}
     >
       <table class="table table-sm table-borderless">
-        {% assign news = site.news | reverse %}
+        {% assign news = site.news | reverse | where_exp: "item", "item.show_news != false" %}
         {% if include.limit and site.announcements.limit %}
           {% assign news_limit = site.announcements.limit %}
         {% else %}
@@ -28,7 +28,7 @@
         {% endfor %}
       </table>
     </div>
-  {% else %}
-    <p>No news so far...</p>
+    {% else %}
+      <p>No news so far...</p>
   {% endif %}
 </div>
