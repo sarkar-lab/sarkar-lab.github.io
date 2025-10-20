@@ -1,0 +1,58 @@
+/* gentle cream site background */
+:root {
+  /* keep light mode + variables other CSS can reuse */
+  --cream-bg: #fffaf2;      /* soft cream */
+  --cream-surface: #fff7e8; /* cards/sections */
+  --ink: #1f1f1f;           /* main text */
+  --muted-ink: #444;
+  --rule: #e9dccb;          /* separators/borders */
+}
+
+html, body {
+  background: var(--cream-bg) !important;
+  color: var(--ink);
+}
+
+/* page containers / posts */
+.page-content, .post, .post-content, .wrapper, main {
+  background: transparent;
+  color: var(--ink);
+}
+
+/* cards, callouts, code blocks, and “surfaces” */
+.card, .card-body, .callout, .note, .highlight, pre, code, kbd, samp {
+  background: var(--cream-surface) !important;
+  border-color: var(--rule) !important;
+}
+
+/* tables */
+table, .table, .table-striped {
+  background: var(--cream-surface);
+}
+.table th {
+  background: #fff3de;        /* slightly stronger for headers */
+  color: var(--ink);
+  border-bottom: 1px solid var(--rule);
+}
+.table td {
+  border-top: 1px solid var(--rule);
+}
+
+/* navbar & footer */
+.navbar, .site-header, .site-footer {
+  background: rgba(255, 250, 242, 0.9) !important;
+  border-bottom: 1px solid var(--rule);
+}
+.site-footer {
+  border-top: 1px solid var(--rule);
+}
+
+/* links & small UI bits stay readable on cream */
+a { color: #0b67c2; }
+a:hover { color: #084f95; }
+hr { border-top: 1px solid var(--rule); }
+.text-muted, .post-meta { color: var(--muted-ink) !important; }
+
+/* ensure we never flip to dark */
+:root { color-scheme: light !important; }
+[data-theme="dark"] { color-scheme: light !important; }
