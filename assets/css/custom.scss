@@ -56,3 +56,25 @@ hr { border-top: 1px solid var(--rule); }
 /* ensure we never flip to dark */
 :root { color-scheme: light !important; }
 [data-theme="dark"] { color-scheme: light !important; }
+
+/* Force light rendering everywhere */
+html { color-scheme: light !important; }
+
+/* If any script sets these, neutralize them */
+[data-theme="dark"],
+[data-bs-theme="dark"] {
+  color-scheme: light !important;
+}
+
+/* Hide any UI that lets users toggle theme */
+.theme-toggle,
+.color-scheme-toggle,
+[data-bs-toggle="theme"] {
+  display: none !important;
+}
+
+/* Optional: if the navbar has a theme-switch icon class */
+.nav-item.theme-switch,
+.navbar .theme-icon {
+  display: none !important;
+}
