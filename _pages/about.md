@@ -46,6 +46,11 @@ I am an **Assistant Professor** in the newly established [<span style="text-deco
 I’m recruiting **a few graduate students for Fall 2026**. Email me at `<firstname>.<lastname>@vanderbilt.edu` if you’d like to explore possibilities, **and** click below
 <div align="center"> <a href="https://engineering.vanderbilt.edu/departments/computer-science/graduate/" target="_blank" style="background:#B3A369;color:#000;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;display:inline-block;"> 🚀 Apply to the CS/CCC Graduate Program at Vanderbilt </a> </div>
 
+
+<br> 
+
+💡 <span style="font-weight:600;"> BS/MS students at Vanderbilt interested in independent research projects or research credits (e.g., CS 3860 / CS 8390) are also welcome to reach out. 💡</span> 
+
 #### Brief Bio
 <div style="margin-top:0em; text-align:left;">
   I obtained my <strong>Ph.D. in Computer Science</strong> from the 
