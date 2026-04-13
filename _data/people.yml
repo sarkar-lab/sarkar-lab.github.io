@@ -1,0 +1,35 @@
+lab_members:
+  - name: Hirak Sarkar
+    image: ISMB_headshot.jpeg   # path relative to assets/img/
+    position: Principal Investigator
+    url:                        # optional personal/lab page
+                        
+
+friends:
+  - name: Harsimran Kaur
+    image:                      # leave blank to show initials avatar
+    lab: PhD student, Lau Lab, Vanderbilt University
+    url:
+  - name: Sandy Lee
+    image:                      # leave blank to show initials avatar
+    lab: Postdoctoral Associate, Lau Lab, Vanderbilt University
+    url:
+  - name: Sam Kang
+    image:                      # leave blank to show initials avatar
+    lab: Postdoctoral Associate, Lau Lab, Vanderbilt University
+    url:
+
+collaborators:
+  - name: Prof. Ken Lau
+    institution: Vanderbilt University
+    image:
+    url:
+  - name: Prof. Maizie Zhou
+    institution: Vanderbilt University
+    image:
+    url: https://maiziezhoulab.github.io/
+  - name: Prof. Anrin Chakraborty
+    institution: University of Illionois Chicago
+    image:
+    url: https://anrinch.github.io/
+

@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: Computational Biology, Vanderbilt University
+subtitle: College of Connected Computing, Vanderbilt University
 
 profile:
   align: right

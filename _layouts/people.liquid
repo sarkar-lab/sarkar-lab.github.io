@@ -1,0 +1,104 @@
+---
+layout: default
+---
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.description %}
+      <p class="desc">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  <article>
+
+    {%- assign people = site.data.people -%}
+
+    <!-- Lab Members -->
+    {% if people.lab_members and people.lab_members.size > 0 %}
+    <h2 class="mt-4 mb-3">Lab Members</h2>
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-4 mb-5">
+      {% for person in people.lab_members %}
+      <div class="col">
+        <div class="card h-100 text-center border-0 shadow-sm">
+          {% if person.image %}
+            {% assign img_path = person.image | prepend: 'assets/img/' %}
+            <img src="{{ img_path | relative_url }}" class="card-img-top rounded-circle mx-auto mt-3" alt="{{ person.name }}" style="width:120px;height:120px;object-fit:cover;">
+          {% else %}
+            <div class="rounded-circle mx-auto mt-3 d-flex align-items-center justify-content-center bg-secondary text-white" style="width:120px;height:120px;font-size:2rem;font-weight:700;">
+              {{ person.name | slice: 0 }}
+            </div>
+          {% endif %}
+          <div class="card-body pb-3">
+            {% if person.url %}
+              <h6 class="card-title mb-1"><a href="{{ person.url }}" target="_blank" style="text-decoration:none;">{{ person.name }}</a></h6>
+            {% else %}
+              <h6 class="card-title mb-1">{{ person.name }}</h6>
+            {% endif %}
+            <p class="card-text text-muted" style="font-size:0.85rem;">{{ person.position }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Friends in Other Labs -->
+    {% if people.friends and people.friends.size > 0 %}
+    <h2 class="mt-4 mb-3">Trainees from Other Labs</h2>
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-4 mb-5">
+      {% for person in people.friends %}
+      <div class="col">
+        <div class="card h-100 text-center border-0 shadow-sm">
+          {% if person.image %}
+            {% assign img_path = person.image | prepend: 'assets/img/' %}
+            <img src="{{ img_path | relative_url }}" class="card-img-top rounded-circle mx-auto mt-3" alt="{{ person.name }}" style="width:120px;height:120px;object-fit:cover;">
+          {% else %}
+            <div class="rounded-circle mx-auto mt-3 d-flex align-items-center justify-content-center bg-secondary text-white" style="width:120px;height:120px;font-size:2rem;font-weight:700;">
+              {{ person.name | slice: 0 }}
+            </div>
+          {% endif %}
+          <div class="card-body pb-3">
+            {% if person.url %}
+              <h6 class="card-title mb-1"><a href="{{ person.url }}" target="_blank" style="text-decoration:none;">{{ person.name }}</a></h6>
+            {% else %}
+              <h6 class="card-title mb-1">{{ person.name }}</h6>
+            {% endif %}
+            <p class="card-text text-muted" style="font-size:0.85rem;">{{ person.lab }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Collaborators -->
+    {% if people.collaborators and people.collaborators.size > 0 %}
+    <h2 class="mt-4 mb-3">Collaborators</h2>
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-4 mb-5">
+      {% for person in people.collaborators %}
+      <div class="col">
+        <div class="card h-100 text-center border-0 shadow-sm">
+          {% if person.image %}
+            {% assign img_path = person.image | prepend: 'assets/img/' %}
+            <img src="{{ img_path | relative_url }}" class="card-img-top rounded-circle mx-auto mt-3" alt="{{ person.name }}" style="width:120px;height:120px;object-fit:cover;">
+          {% else %}
+            <div class="rounded-circle mx-auto mt-3 d-flex align-items-center justify-content-center bg-secondary text-white" style="width:120px;height:120px;font-size:2rem;font-weight:700;">
+              {{ person.name | slice: 0 }}
+            </div>
+          {% endif %}
+          <div class="card-body pb-3">
+            {% if person.url %}
+              <h6 class="card-title mb-1"><a href="{{ person.url }}" target="_blank" style="text-decoration:none;">{{ person.name }}</a></h6>
+            {% else %}
+              <h6 class="card-title mb-1">{{ person.name }}</h6>
+            {% endif %}
+            <p class="card-text text-muted" style="font-size:0.85rem;">{{ person.institution }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+  </article>
+</div>
