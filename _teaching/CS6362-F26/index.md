@@ -44,7 +44,7 @@ it. Readings for each lecture are listed in the [schedule](#️-schedule).
 | Module | Core question | Topics |
 |---|---|---|
 | **I. Learning, optimization, generalization**<br><i>Weeks 1–6</i> | What solution does learning actually find? | Gradient descent and SGD; Bayesian statistics; Gaussian processes; Laplace approximation and variational inference; MCMC and HMC; lazy training and the neural tangent kernel; interpolation, double descent, implicit bias; Bayesian neural networks |
-| **II. Learning distributions**<br><i>Weeks 7–10</i> | How can we represent and fit complex distributions? | EM and latent-variable models; variational autoencoders; posterior collapse; discrete latents; adversarial objectives and their instability; normalizing flows; energy-based models; score matching; diffusion; flow matching |
+| **II. Generative models**<br><i>Weeks 7–10</i> | How can we represent and fit complex distributions? | EM and latent-variable models; variational autoencoders; posterior collapse; discrete latents; adversarial objectives and their instability; normalizing flows; energy-based models; score matching; diffusion; flow matching |
 | **III. Representations, sequences, decisions**<br><i>Weeks 10–12</i> | What internal state supports prediction and action? | Contrastive and non-contrastive self-supervised learning; representation collapse; attention and the Transformer; policy gradients |
 | **IV. The foundation-model regime**<br><i>Weeks 12–13</i> | What changes when scale, compute and post-training dominate? | Scaling laws; compute-optimal training; systems constraints on model design; RLHF; direct preference optimization; reasoning models |
 | **V. Understanding and deploying learned systems**<br><i>Week 15</i> | How do we interpret, act with, and evaluate modern models? | Superposition; sparse autoencoders and feature recovery; tool use and long-horizon agents; benchmark design and validity |
@@ -341,7 +341,7 @@ table.wide td:nth-child(3) { width: 34%; }
 </tr>
 
 <tr class="mod"><td colspan="4">
-  <b>Module II — Learning distributions</b><br>
+  <b>Module II — Generative models</b><br>
   <span class="q">How can we represent and fit complex distributions?</span>
   {% comment %} instructor planning note — stripped from the built page
   <span>Spine: EM → VAE → GAN → WGAN → Score matching → DDPM</span>
@@ -572,7 +572,7 @@ inference, Markov chain Monte Carlo, and neural network posteriors.
 Lazy training and the neural tangent kernel, interpolation, double descent, and the implicit bias of
 gradient descent — the bridge from classical theory to modern practice.
 
-### Module II — Learning distributions
+### Module II — Generative models
 
 *How can we represent and fit complex distributions?*
 
@@ -677,7 +677,7 @@ useful for the midterm and for finding a project topic.
 - **Soudry et al.**, [*The Implicit Bias of Gradient Descent on Separable Data*](https://arxiv.org/abs/1710.10345)
 - **Mohamed et al.**, [*Monte Carlo Gradient Estimation in Machine Learning*](https://www.jmlr.org/papers/volume21/19-346/19-346.pdf) (**MCGE**)
 
-**Module II — Learning distributions**
+**Module II — Generative models**
 
 - [Dempster et al. (1977)](https://doi.org/10.1111/j.2517-6161.1977.tb01600.x), *Maximum Likelihood from Incomplete Data via the EM Algorithm*
 - **Kingma et al.**, [*Auto-Encoding Variational Bayes*](https://arxiv.org/abs/1312.6114) — the VAE
