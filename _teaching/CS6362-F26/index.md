@@ -37,10 +37,8 @@ sequence models, scaling, post-training, interpretability, and evaluation.
 
 ## 🧱 Module Structure
 
-The course is organized as **six modules**, each framed by a core question and by the **learning
-scenario** it assumes — what data and what supervision are available. Within a module the lectures
-build on one another in sequence, so that each idea answers a limitation of the one before it.
-Readings for each lecture are listed in the [schedule](#️-schedule).
+The course is divided into six modules. Readings for each lecture are listed in the
+[schedule](#️-schedule).
 
 | Module | Core question | Topics |
 |---|---|---|
@@ -51,12 +49,10 @@ Readings for each lecture are listed in the [schedule](#️-schedule).
 | **V. Scale and post-training**<br><i>Weeks 12–13</i> | What changes when scale and post-training dominate? | Scaling laws; compute-optimal training; systems constraints on model design; RLHF; direct preference optimization; reasoning models and verifiable rewards |
 | **VI. Interpretability and evaluation**<br><i>Week 15</i> | How do we understand and evaluate what we have built? | Superposition; sparse autoencoders and feature recovery; tool use and long-horizon agents; benchmark design and validity |
 
-**Where supervised learning sits.** Modules I and II develop the core machinery in the ordinary
-**supervised** setting — regression, Gaussian processes and Bayesian neural networks all predict a
-label from an input. Supervision is the baseline rather than a separate topic. The later modules
-each relax one part of that setup: III changes what the model produces (samples, not predictions),
-IV removes the labels, V changes the training objective and the scale, and VI asks what the
-resulting system has actually learned.
+Modules I and II treat the supervised setting: regression, Gaussian processes and Bayesian neural
+networks all predict a label from an input. Module III turns to models that produce samples rather
+than predictions, Module IV to learning without labels, Module V to training at scale, and Module VI
+to inspecting and evaluating the resulting systems.
 
 ## Logistics
 
@@ -260,7 +256,7 @@ table.wide td:nth-child(3) { width: 34%; }
 <tr class="wk"><td colspan="4"><b>Week 3</b> (Sep 7) — Generalization; inference begins</td></tr>
 <tr>
   <td>Mon, Sep 07</td>
-  <td>What does SGD actually find? Lazy training and the neural tangent kernel; interpolation, double descent, implicit bias <span style="opacity:0.7;font-size:0.92em;">(Labor Day — staff holiday; classes meet per the academic calendar)</span></td>
+  <td>What does SGD actually find? Lazy training and the neural tangent kernel; interpolation, double descent, implicit bias <span style="opacity:0.7;font-size:0.92em;">(Labor Day — class meets)</span></td>
   <td><a href="https://mml-book.github.io/" class="paper-link">MML</a> Ch. 12.4;
       <a href="https://arxiv.org/abs/1806.07572" class="paper-link">Neural tangent kernel</a>;
       <a href="https://arxiv.org/abs/1611.03530" class="paper-link">Zhang et al., Rethinking generalization</a>;
@@ -390,7 +386,7 @@ table.wide td:nth-child(3) { width: 34%; }
 </tr>
 <tr>
   <td>Thu–Fri, Oct 22–23</td>
-  <td><b>Fall Break</b> <span style="opacity:0.7;font-size:0.92em;">(Thu–Fri; no effect on Mon/Wed meetings)</span></td>
+  <td><b>Fall Break</b> <span style="opacity:0.7;font-size:0.92em;">(Thu–Fri)</span></td>
   <td></td>
   <td></td>
 </tr>
@@ -514,7 +510,7 @@ table.wide td:nth-child(3) { width: 34%; }
 </tr>
 <tr>
   <td>Wed, Dec 02</td>
-  <td>Agents and evaluation: tool use, and what benchmarks actually measure</td>
+  <td>Agents and evaluation: tool use, benchmark design and validity</td>
   <td><a href="https://arxiv.org/abs/2210.03629" class="paper-link">Yao et al., ReAct</a>;
       <a href="https://arxiv.org/abs/2405.15793" class="paper-link">Yang et al., SWE-agent</a>;
       <a href="https://arxiv.org/abs/2211.09110" class="paper-link">Liang et al., HELM</a>;
@@ -555,63 +551,60 @@ table.wide td:nth-child(3) { width: 34%; }
 
 *What solution does learning actually find?*
 
-Finding the *best* model parameters, in the ordinary supervised setting. Stochastic gradient descent
-is emphasized given its predominance in modern ML: what gradient descent is, why it works, and its
-limitations, together with the necessary linear algebra, probability & statistics, and convexity.
+Finding the best model parameters in the supervised setting. Gradient descent and stochastic
+gradient descent: what they are, why they converge, and where they fail, with the necessary linear
+algebra, probability and convexity.
 
-The module closes on **generalization**: why does an overparameterized model that can fit random
-labels still generalize? Lazy training and the neural tangent kernel, interpolation, double descent,
-and the implicit bias of gradient descent — the bridge from classical theory to modern practice.
+Generalization: why an overparameterized model that can fit random labels still generalizes. Lazy
+training and the neural tangent kernel, interpolation, double descent, and the implicit bias of
+gradient descent.
 
 ### Module II — Fundamentals of inference
 
 *What do we believe about a model, and how uncertain are we?*
 
-Finding a *set* of models rather than one. Bayesian inference and the posterior over model
-parameters, starting with closed-form cases: basics of Bayesian statistics, parametric models
-(working with Gaussians and friends), nonparametric models (Gaussian processes), and model
-selection. Then the intractable case — **approximate inference**: Laplace approximation, variational
-inference, Markov chain Monte Carlo, and neural network posteriors. Finally, what a posterior buys
-you in practice: uncertainty estimates and out-of-distribution detection.
+Finding a set of models rather than one. Bayesian inference and the posterior over model
+parameters, beginning with cases that admit a closed form: Bayesian statistics, parametric models,
+Gaussian processes, and model selection. Where the posterior is intractable: Laplace approximation,
+variational inference, Markov chain Monte Carlo, and neural network posteriors. Applications to
+uncertainty estimation and out-of-distribution detection.
 
 ### Module III — Generative modeling
 
 *How can we represent and fit complex distributions?*
 
-What unites this module is that **none of these methods can simply maximize a likelihood**, and each
-is a different way around that. Latent-variable models and EM optimize a bound; variational
-autoencoders generalize that bound with amortized inference (the ELBO revisited, posterior collapse,
-discrete latents); implicit models abandon likelihood altogether for a two-sample game (GANs, WGAN —
-divergences, instability, mode collapse); normalizing flows constrain the architecture to keep
-likelihood exact; and the score-based family sidesteps normalization entirely — energy-based models,
-score matching, denoising diffusion, and flow matching.
+Methods for fitting a distribution whose likelihood cannot be maximized directly. Latent-variable
+models and EM optimize a bound. Variational autoencoders extend that bound with amortized inference:
+the ELBO, posterior collapse, discrete latents. Implicit models replace the likelihood with a
+two-sample objective: GANs and WGAN, divergences, instability, mode collapse. Normalizing flows
+constrain the architecture so the likelihood stays exact. Energy-based models, score matching,
+denoising diffusion and flow matching avoid normalization altogether.
 
 ### Module IV — Self-supervised learning
 
 *What can we learn without labels?*
 
-Self-supervised learning is supervised learning where the labels come free from the structure of the
-data: hide part of the input and predict it from the rest, then discard the prediction head and keep
-the representation. Contrastive objectives (Word2Vec, SimCLR) and non-contrastive ones (BYOL,
-VICReg), and why the latter do not collapse. Then the Transformer, whose next-token objective makes
-it the self-supervised pretraining recipe behind modern language models.
+Supervision derived from the data itself: part of the input is hidden and predicted from the rest,
+and the resulting representation is retained. Contrastive objectives (Word2Vec, SimCLR) and
+non-contrastive objectives (BYOL, VICReg), and the conditions under which representations collapse.
+The Transformer, whose next-token objective underlies the pretraining of modern language models.
 
 ### Module V — Scale and post-training
 
 *What changes when scale and post-training dominate?*
 
-Scaling laws and compute-optimal training; how systems constraints (FlashAttention) shape what models
-get built at all. Then post-training as the second half of the modern recipe: RLHF, direct preference
-optimization — which reaches the same objective without a reinforcement-learning loop — and reasoning
-models trained against verifiable rewards.
+Scaling laws and compute-optimal training, and the systems constraints that shape model design
+(FlashAttention). Post-training: RLHF, direct preference optimization, which attains the same
+objective without a reinforcement-learning loop, and reasoning models trained against verifiable
+rewards.
 
 ### Module VI — Interpretability and evaluation
 
 *How do we understand and evaluate what we have built?*
 
-Mechanistic interpretability: superposition, and sparse autoencoders as a tool for recovering
-interpretable features. Agents that use tools and act over long horizons. And evaluation — what
-benchmarks like HELM and τ-bench actually measure, and how measurement goes wrong. -->
+Mechanistic interpretability: superposition, and sparse autoencoders for recovering interpretable
+features. Agents that use tools and act over long horizons. Evaluation: what benchmarks such as HELM
+and τ-bench measure, and the ways benchmark design fails. -->
 
 ## 👥 Course Assessment (Tentative)
 
@@ -656,7 +649,7 @@ The schedule draws on the following books and review articles, referenced by abb
 - [**MML**](https://mml-book.github.io/) — Deisenroth, Faisal & Ong, *Mathematics for Machine Learning*
 - [**FML**](https://cs.nyu.edu/~mohri/mlbook/) — Mohri, Rostamizadeh & Talwalkar, *Foundations of Machine Learning*
 - [**LSML**](https://epubs.siam.org/doi/10.1137/16M1080173) — **Bottou et al.**, *Optimization Methods for Large-Scale Machine Learning* ([free arXiv version](https://arxiv.org/pdf/1606.04838))
-- [**HCT**](https://arxiv.org/pdf/2301.11235) — **Garrigos et al.**, *Handbook of Convergence Theorems for (Stochastic) Gradient Methods*. Only **Ch. 5** (Stochastic Gradient Descent, 9 pp.) is assigned; Ch. 3 covers deterministic gradient descent if you want it. The handbook is written to be read non-linearly — jump to the theorem you need and follow its links back for the assumptions
+- [**HCT**](https://arxiv.org/pdf/2301.11235) — **Garrigos et al.**, *Handbook of Convergence Theorems for (Stochastic) Gradient Methods*. Ch. 5 (Stochastic Gradient Descent) is assigned; Ch. 3 covers deterministic gradient descent
 
 **Inference**
 
@@ -669,9 +662,8 @@ The readings listed in the schedule are intended to **complement** the lecture s
 
 ### Reading list by module
 
-Each lecture's assigned reading is in the [schedule](#️-schedule). This list collects the same
-papers per module, in the order the ideas developed, so you can read a module as a single thread —
-useful for the midterm and for finding a project topic.
+Papers grouped by module, in the order covered. Per-lecture assignments are in the
+[schedule](#️-schedule).
 
 **Module I — Fundamentals of optimization**
 
@@ -686,9 +678,9 @@ useful for the midterm and for finding a project topic.
 
 **Module II — Fundamentals of inference**
 
-This module is taught mainly from textbooks — [**PML-1**](https://probml.github.io/pml-book/book1.html)
-Ch. 6, [**PML-2**](https://probml.github.io/pml-book/book2.html) Ch. 2–3, 5–7, 10–12, 15, 17, 19, and
-[**GP**](https://gaussianprocess.org/gpml/chapters/) Ch. 2. One review article is assigned:
+Textbook readings: [**PML-1**](https://probml.github.io/pml-book/book1.html) Ch. 6,
+[**PML-2**](https://probml.github.io/pml-book/book2.html) Ch. 2–3, 5–7, 10–12, 15, 17, 19, and
+[**GP**](https://gaussianprocess.org/gpml/chapters/) Ch. 2. One article:
 
 - **Mohamed et al.**, [*Monte Carlo Gradient Estimation in Machine Learning*](https://www.jmlr.org/papers/volume21/19-346/19-346.pdf) (**MCGE**)
 
