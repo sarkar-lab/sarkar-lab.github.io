@@ -17,23 +17,39 @@ permalink: /courses/CS6362-F26/
 This is a course on machine learning that studies different types of **learning scenarios**. A
 scenario is characterized by four choices:
 
-1. **The specification of our model.** Is the model linear? A neural network? This course is not
-   focused on the details of model design — we assume a model has parameters that can be learned,
-   accepts something as input, and produces something as output.
-2. **The input provided for learning.** How many data items? What dimensionality? How many
-   labeled examples?
+1. **The specification of our model.** Is the model linear? A neural network? For most of the
+   course we assume only that a model has parameters that can be learned, accepts something as
+   input, and produces something as output. Model design returns in Module V, where systems
+   constraints begin to shape it.
+2. **The input provided for learning.** How many data items, and how many of them are labeled?
+   The answer ranges from a modest labeled dataset in Modules I and II, to no labels at all in
+   Module IV, to internet-scale corpora in Module V.
 3. **The output of the model.** Are we making predictions about a given data item, or generating
-   novel data? If predicting — regression or classification?
+   novel data? If predicting, regression or classification?
 4. **What we expect from the learning method.** Are we seeking the *best* model, or a *set* of
-   good models?
+   good models? Module I pursues the first, Module II the second.
 
-The course is about **algorithms for learning** across these axes. The first half covers
-fundamentals of **optimization** and **inference**; the second half builds on those foundations
-through the **foundation-model era** — generative modeling, self-supervised representations,
-sequence models, scaling, post-training, interpretability, and evaluation.
+The course is about **algorithms for learning** across these axes.
+
+We begin with **optimization**: gradient descent and its stochastic variants, and how they
+converge. Then we take up the harder question of *which* solution they converge to, and why a model
+with enough capacity to fit random labels nonetheless generalizes.
+
+From there we ask what we are entitled to believe about a fitted model, and how uncertain we should
+be. This is **inference**: the Bayesian view, together with the approximations that make it
+tractable.
+
+With those foundations in place, we turn to models that produce samples rather than predictions,
+then to learning without labels at all, then to what changes when scale and post-training dominate,
+and finally to understanding and evaluating the systems that result.
+
+The ELBO you derive in Module II is the VAE objective in Module III. The self-supervised objectives
+in Module IV are what the scaling laws in Module V scale. By the end, the pieces of a modern
+foundation model should look like consequences of ideas you have derived yourself, rather than a
+list of architectures.
 
 <br><br>
-<span style="color:#8e2de2;font-weight:600;">💡 The emphasis is on <i>why</i> these methods work — deriving them from first principles — so you can adapt and extend them, not only apply them.</span>
+<span style="color:#8e2de2;font-weight:600;">💡 The emphasis is on deriving these methods from first principles, so you can adapt and extend them, not only apply them.</span>
 
 ## 🧱 Module Structure
 
@@ -89,9 +105,14 @@ Programming assignments run throughout the semester, in **Python**. We use **Num
 computations — experience with multidimensional arrays, slicing, and broadcasting is expected — and
 where relevant [**JAX**](https://github.com/google/jax) for automatic differentiation.
 
-Assignments build on provided boilerplate code. Where that is the case, you **may not import
-additional Python libraries** beyond those included with the assignment; doing so forfeits credit
+If **specifically asked** for implementing an assignment, you must build on provided boilerplate code. Where that is the case, you **may not import additional Python libraries** beyond those included with the assignment; doing so forfeits credit
 for the assignment. Include instructions for running your code, and submit as an archive.
+
+There are **three** assignments. The first two cover optimization and inference respectively. The
+third is an open-ended **scaling-laws** assignment: you will train a family of small models across
+a range of sizes and compute budgets, fit a power law to the results, and use it to predict the
+loss of a larger model you then train to check. Everything runs on a laptop or a free Colab tier,
+and the Thanksgiving break falls inside the window to give you time for the sweeps.
 
 ### Quizzes
 
@@ -334,7 +355,7 @@ table.wide td:nth-child(3) { width: 34%; }
 <tr class="wk"><td colspan="4"><b>Week 7</b> (Oct 5) — Midterm; generative modeling begins</td></tr>
 <tr>
   <td>Mon, Oct 05</td>
-  <td><b>Midterm</b></td>
+  <td><b>Midterm</b> <span style="opacity:0.7;font-size:0.92em;">(Modules I–II: optimization and inference)</span></td>
   <td></td>
   <td><span class="due">Will be graded</span></td>
 </tr>
@@ -359,7 +380,7 @@ table.wide td:nth-child(3) { width: 34%; }
   <td>Variational autoencoders: the ELBO revisited, posterior collapse</td>
   <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 21.1–21.2, 21.4;
       <a href="https://arxiv.org/abs/1312.6114" class="paper-link">Kingma &amp; Welling, VAE</a></td>
-  <td><span class="due">Assignment 3 posted</span></td>
+  <td></td>
 </tr>
 <tr>
   <td>Wed, Oct 14</td>
@@ -417,12 +438,6 @@ table.wide td:nth-child(3) { width: 34%; }
       <a href="https://arxiv.org/abs/2002.05709" class="paper-link">Chen et al., SimCLR</a></td>
   <td></td>
 </tr>
-<tr>
-  <td>Fri, Oct 30</td>
-  <td></td>
-  <td></td>
-  <td><span class="due">Assignment 3 due</span></td>
-</tr>
 
 <tr class="wk"><td colspan="4"><b>Week 11</b> (Nov 2) — Non-contrastive learning; attention</td></tr>
 <tr>
@@ -459,7 +474,7 @@ table.wide td:nth-child(3) { width: 34%; }
   <td>Wed, Nov 11</td>
   <td>How systems constraints shape model design: FlashAttention</td>
   <td><a href="https://arxiv.org/abs/2205.14135" class="paper-link">Dao et al., FlashAttention</a></td>
-  <td></td>
+  <td><span class="due">Assignment 3 posted</span></td>
 </tr>
 <tr>
   <td>Fri, Nov 13</td>
@@ -516,6 +531,12 @@ table.wide td:nth-child(3) { width: 34%; }
       <a href="https://arxiv.org/abs/2211.09110" class="paper-link">Liang et al., HELM</a>;
       <a href="https://arxiv.org/abs/2406.12045" class="paper-link">Yao et al., τ-bench</a></td>
   <td></td>
+</tr>
+<tr>
+  <td>Fri, Dec 04</td>
+  <td></td>
+  <td></td>
+  <td><span class="due">Assignment 3 due</span></td>
 </tr>
 
 <tr class="wk"><td colspan="4"><b>Week 16</b> (Dec 7) — Project presentations</td></tr>
