@@ -37,22 +37,26 @@ sequence models, scaling, post-training, interpretability, and evaluation.
 
 ## 🧱 Module Structure
 
-The course is organized as **five modules**, each framed by a core question. Within a module the
-lectures build on one another in sequence, so that each idea answers a limitation of the one before
-it. Readings for each lecture are listed in the [schedule](#️-schedule).
+The course is organized as **six modules**, each framed by a core question and by the **learning
+scenario** it assumes — what data and what supervision are available. Within a module the lectures
+build on one another in sequence, so that each idea answers a limitation of the one before it.
+Readings for each lecture are listed in the [schedule](#️-schedule).
 
 | Module | Core question | Topics |
 |---|---|---|
-| **I. Learning, optimization, generalization**<br><i>Weeks 1–6</i> | What solution does learning actually find? | Gradient descent and SGD; Bayesian statistics; Gaussian processes; Laplace approximation and variational inference; MCMC and HMC; lazy training and the neural tangent kernel; interpolation, double descent, implicit bias; Bayesian neural networks |
-| **II. Generative models**<br><i>Weeks 7–10</i> | How can we represent and fit complex distributions? | EM and latent-variable models; variational autoencoders; posterior collapse; discrete latents; adversarial objectives and their instability; normalizing flows; energy-based models; score matching; diffusion; flow matching |
-| **III. Representations, sequences, decisions**<br><i>Weeks 10–12</i> | What internal state supports prediction and action? | Contrastive and non-contrastive self-supervised learning; representation collapse; attention and the Transformer; policy gradients |
-| **IV. The foundation-model regime**<br><i>Weeks 12–13</i> | What changes when scale, compute and post-training dominate? | Scaling laws; compute-optimal training; systems constraints on model design; RLHF; direct preference optimization; reasoning models |
-| **V. Understanding and deploying learned systems**<br><i>Week 15</i> | How do we interpret, act with, and evaluate modern models? | Superposition; sparse autoencoders and feature recovery; tool use and long-horizon agents; benchmark design and validity |
+| **I. Fundamentals of optimization**<br><i>Weeks 1–3</i> | What solution does learning actually find? | Gradient descent and stochastic gradient descent; convergence; lazy training and the neural tangent kernel; interpolation, double descent, implicit bias |
+| **II. Fundamentals of inference**<br><i>Weeks 3–6</i> | What do we believe about a model, and how uncertain are we? | Bayesian statistics; Gaussian processes; model selection; Laplace approximation and the ELBO; variational inference; Monte Carlo and MCMC; Bayesian neural networks; out-of-distribution detection |
+| **III. Generative modeling**<br><i>Weeks 7–10</i> | How can we represent and fit complex distributions? | EM and latent-variable models; variational autoencoders; posterior collapse; discrete latents; adversarial objectives and their instability; normalizing flows; energy-based models; score matching; diffusion; flow matching |
+| **IV. Self-supervised learning**<br><i>Weeks 10–11</i> | What can we learn without labels? | Contrastive and non-contrastive objectives; representation collapse; attention and the Transformer as self-supervised pretraining |
+| **V. Scale and post-training**<br><i>Weeks 12–13</i> | What changes when scale and post-training dominate? | Scaling laws; compute-optimal training; systems constraints on model design; RLHF; direct preference optimization; reasoning models and verifiable rewards |
+| **VI. Interpretability and evaluation**<br><i>Week 15</i> | How do we understand and evaluate what we have built? | Superposition; sparse autoencoders and feature recovery; tool use and long-horizon agents; benchmark design and validity |
 
-Module I is the **classical core**: optimization, then Bayesian and approximate inference. It
-answers "what solution does learning find?" twice over — once as a point estimate found by SGD, and
-once as a posterior distribution over models. Modules II–V then follow what happens when models,
-data, and compute all grow.
+**Where supervised learning sits.** Modules I and II develop the core machinery in the ordinary
+**supervised** setting — regression, Gaussian processes and Bayesian neural networks all predict a
+label from an input. Supervision is the baseline rather than a separate topic. The later modules
+each relax one part of that setup: III changes what the model produces (samples, not predictions),
+IV removes the labels, V changes the training objective and the scale, and VI asks what the
+resulting system has actually learned.
 
 ## Logistics
 
@@ -60,7 +64,8 @@ data, and compute all grow.
 - **Term:** Fall 2026
 - **Class Times:** Mondays & Wednesdays <i>03:35 PM - 04:50 PM</i>
 - **Location:** Featheringill Hall 129
-- **Instructor:** Hirak Sarkar
+- **Instructor:** Hirak Sarkar — <a href="mailto:{{ 'hirak.sarkar@vanderbilt.edu' | encode_email }}">hirak.sarkar@vanderbilt.edu</a>
+- **Teaching Assistant:** Huy Tran — <a href="mailto:{{ 'huy.tran@vanderbilt.edu' | encode_email }}">huy.tran@vanderbilt.edu</a>
 - **Office Hours:** TBD
 
 ## 🎯 Learning Goals
@@ -200,17 +205,6 @@ table.wide td:nth-child(3) { width: 34%; }
   font-style: italic;
   opacity: 0.85;
 }
-.new {
-  display: inline-block;
-  padding: 1px 7px;
-  margin-left: 6px;
-  font-size: 11px;
-  font-weight: 700;
-  vertical-align: 1px;
-  border-radius: 9999px;
-  background: rgba(142, 45, 226, 0.75);
-  color: #fff;
-}
 </style>
 
 <table class="wide">
@@ -225,7 +219,7 @@ table.wide td:nth-child(3) { width: 34%; }
 <tbody>
 
 <tr class="mod"><td colspan="4">
-  <b>Module I — Learning, optimization, generalization</b><br>
+  <b>Module I — Fundamentals of optimization</b><br>
   <span class="q">What solution does learning actually find?</span>
   {% comment %} instructor planning note — stripped from the built page
   <span>Spine: Robbins &amp; Monro → Bottou, Curtis &amp; Nocedal → Zhang et al. → Soudry et al. / Belkin et al.</span>
@@ -252,7 +246,8 @@ table.wide td:nth-child(3) { width: 34%; }
 <tr>
   <td>Wed, Sep 02</td>
   <td>Stochastic gradient descent</td>
-  <td><a href="https://epubs.siam.org/doi/10.1137/16M1080173" class="paper-link">LSML</a> Sec. 2–7</td>
+  <td><a href="https://epubs.siam.org/doi/10.1137/16M1080173" class="paper-link">LSML</a> Sec. 2–7;
+      <a href="https://arxiv.org/pdf/2301.11235" class="paper-link">HCT</a> Ch. 5</td>
   <td></td>
 </tr>
 <tr>
@@ -262,53 +257,61 @@ table.wide td:nth-child(3) { width: 34%; }
   <td><span class="due">Assignment 1 posted</span></td>
 </tr>
 
-<tr class="wk"><td colspan="4"><b>Week 3</b> (Sep 7) — Bayesian inference: parametric and nonparametric</td></tr>
+<tr class="wk"><td colspan="4"><b>Week 3</b> (Sep 7) — Generalization; inference begins</td></tr>
 <tr>
   <td>Mon, Sep 07</td>
-  <td>Bayesian statistics, linear regression; Gaussian processes <span style="opacity:0.7;font-size:0.92em;">(Labor Day — staff holiday; classes meet per the academic calendar)</span></td>
+  <td>What does SGD actually find? Lazy training and the neural tangent kernel; interpolation, double descent, implicit bias <span style="opacity:0.7;font-size:0.92em;">(Labor Day — staff holiday; classes meet per the academic calendar)</span></td>
+  <td><a href="https://mml-book.github.io/" class="paper-link">MML</a> Ch. 12.4;
+      <a href="https://arxiv.org/abs/1806.07572" class="paper-link">Neural tangent kernel</a>;
+      <a href="https://arxiv.org/abs/1611.03530" class="paper-link">Zhang et al., Rethinking generalization</a>;
+      <a href="https://arxiv.org/abs/1812.11118" class="paper-link">Belkin et al., Double descent</a>;
+      <a href="https://arxiv.org/abs/1710.10345" class="paper-link">Soudry et al., Implicit bias</a></td>
+  <td></td>
+</tr>
+
+<tr class="mod"><td colspan="4">
+  <b>Module II — Fundamentals of inference</b><br>
+  <span class="q">What do we believe about a model, and how uncertain are we?</span>
+  {% comment %} instructor planning note — stripped from the built page
+  <span>Spine: Bayes → Gaussian processes → Laplace / ELBO → variational inference → MCMC</span>
+  {% endcomment %}
+</td></tr>
+<tr>
+  <td>Wed, Sep 09</td>
+  <td>Bayesian statistics, linear regression; Gaussian processes</td>
   <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 2.3, Ch. 3.2, Ch. 15.2.1–15.2.4;
       <a href="https://gaussianprocess.org/gpml/chapters/" class="paper-link">GP</a> Ch. 2;
       <a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 3.7–3.8</td>
-  <td></td>
-</tr>
-<tr>
-  <td>Wed, Sep 09</td>
-  <td>Model selection, Laplace approximation, information theory basics, ELBO</td>
-  <td><a href="https://probml.github.io/pml-book/book1.html" class="paper-link">PML-1</a> Ch. 6.1–6.2;
-      <a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 5.1, Ch. 7.4, Ch. 10.1</td>
   <td></td>
 </tr>
 
 <tr class="wk"><td colspan="4"><b>Week 4</b> (Sep 14) — Approximate inference</td></tr>
 <tr>
   <td>Mon, Sep 14</td>
-  <td>Variational inference and gradient-based estimators</td>
-  <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 6.3.5, Ch. 10.2;
-      <a href="https://www.jmlr.org/papers/volume21/19-346/19-346.pdf" class="paper-link">MCGE</a></td>
+  <td>Model selection, Laplace approximation, information theory basics, ELBO</td>
+  <td><a href="https://probml.github.io/pml-book/book1.html" class="paper-link">PML-1</a> Ch. 6.1–6.2;
+      <a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 5.1, Ch. 7.4, Ch. 10.1</td>
   <td><span class="due">Assignment 2 posted</span></td>
 </tr>
 <tr>
   <td>Wed, Sep 16</td>
+  <td>Variational inference and gradient-based estimators</td>
+  <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 6.3.5, Ch. 10.2;
+      <a href="https://www.jmlr.org/papers/volume21/19-346/19-346.pdf" class="paper-link">MCGE</a></td>
+  <td></td>
+</tr>
+
+<tr class="wk"><td colspan="4"><b>Week 5</b> (Sep 21) — Monte Carlo and MCMC</td></tr>
+<tr>
+  <td>Mon, Sep 21</td>
   <td>Monte Carlo, Markov chains</td>
   <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 11.1–11.4, Ch. 12.1–12.2</td>
   <td></td>
 </tr>
-
-<tr class="wk"><td colspan="4"><b>Week 5</b> (Sep 21) — MCMC; what SGD finds</td></tr>
-<tr>
-  <td>Mon, Sep 21</td>
-  <td>MCMC: Metropolis–Hastings, Gibbs sampling, mixture models, HMC</td>
-  <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 12.1–12.3, 12.5, Ch. 17.1–17.4</td>
-  <td></td>
-</tr>
 <tr>
   <td>Wed, Sep 23</td>
-  <td>What does SGD actually find? Lazy training and the neural tangent kernel; interpolation, double descent, implicit bias<span class="new">new</span></td>
-  <td><a href="https://mml-book.github.io/" class="paper-link">MML</a> Ch. 12.4;
-      <a href="https://arxiv.org/abs/1806.07572" class="paper-link">Neural tangent kernel</a>;
-      <a href="https://arxiv.org/abs/1611.03530" class="paper-link">Zhang et al., Rethinking generalization</a>;
-      <a href="https://arxiv.org/abs/1812.11118" class="paper-link">Belkin et al., Double descent</a>;
-      <a href="https://arxiv.org/abs/1710.10345" class="paper-link">Soudry et al., Implicit bias</a></td>
+  <td>MCMC: Metropolis–Hastings, Gibbs sampling, mixture models, HMC</td>
+  <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 12.1–12.3, 12.5, Ch. 17.1–17.4</td>
   <td></td>
 </tr>
 <tr>
@@ -332,7 +335,7 @@ table.wide td:nth-child(3) { width: 34%; }
   <td><span class="due">Proposal presentations</span></td>
 </tr>
 
-<tr class="wk"><td colspan="4"><b>Week 7</b> (Oct 5) — Midterm; distributions begin</td></tr>
+<tr class="wk"><td colspan="4"><b>Week 7</b> (Oct 5) — Midterm; generative modeling begins</td></tr>
 <tr>
   <td>Mon, Oct 05</td>
   <td><b>Midterm</b></td>
@@ -341,13 +344,12 @@ table.wide td:nth-child(3) { width: 34%; }
 </tr>
 
 <tr class="mod"><td colspan="4">
-  <b>Module II — Generative models</b><br>
+  <b>Module III — Generative modeling</b><br>
   <span class="q">How can we represent and fit complex distributions?</span>
   {% comment %} instructor planning note — stripped from the built page
   <span>Spine: EM → VAE → GAN → WGAN → Score matching → DDPM</span>
   {% endcomment %}
 </td></tr>
-
 <tr>
   <td>Wed, Oct 07</td>
   <td>EM and latent-variable models</td>
@@ -374,7 +376,7 @@ table.wide td:nth-child(3) { width: 34%; }
 <tr class="wk"><td colspan="4"><b>Week 9</b> (Oct 19) — Implicit and invertible models</td></tr>
 <tr>
   <td>Mon, Oct 19</td>
-  <td>Implicit models: GANs → WGAN — divergences, instability, mode collapse<span class="new">new</span></td>
+  <td>Implicit models: GANs → WGAN — divergences, instability, mode collapse</td>
   <td><a href="https://arxiv.org/abs/1406.2661" class="paper-link">Goodfellow et al., GAN</a>;
       <a href="https://arxiv.org/abs/1701.07875" class="paper-link">Arjovsky et al., WGAN</a></td>
   <td></td>
@@ -393,7 +395,7 @@ table.wide td:nth-child(3) { width: 34%; }
   <td></td>
 </tr>
 
-<tr class="wk"><td colspan="4"><b>Week 10</b> (Oct 26) — Diffusion; representations begin</td></tr>
+<tr class="wk"><td colspan="4"><b>Week 10</b> (Oct 26) — Diffusion; self-supervision begins</td></tr>
 <tr>
   <td>Mon, Oct 26</td>
   <td>Score matching → denoising diffusion (DDPM) → flow matching</td>
@@ -406,16 +408,15 @@ table.wide td:nth-child(3) { width: 34%; }
 </tr>
 
 <tr class="mod"><td colspan="4">
-  <b>Module III — Representations, sequences, decisions</b><br>
-  <span class="q">What internal state supports prediction and action?</span>
+  <b>Module IV — Self-supervised learning</b><br>
+  <span class="q">What can we learn without labels?</span>
   {% comment %} instructor planning note — stripped from the built page
-  <span>Spine: Word2Vec / SimCLR → BYOL / VICReg → Transformer → REINFORCE / PPO</span>
+  <span>Spine: Word2Vec / SimCLR → BYOL / VICReg → Transformer</span>
   {% endcomment %}
 </td></tr>
-
 <tr>
   <td>Wed, Oct 28</td>
-  <td>Contrastive self-supervised learning: Word2Vec → SimCLR<span class="new">new</span></td>
+  <td>Contrastive self-supervision: Word2Vec → SimCLR</td>
   <td><a href="https://arxiv.org/abs/1301.3781" class="paper-link">Mikolov et al., Word2Vec</a>;
       <a href="https://arxiv.org/abs/2002.05709" class="paper-link">Chen et al., SimCLR</a></td>
   <td></td>
@@ -430,40 +431,38 @@ table.wide td:nth-child(3) { width: 34%; }
 <tr class="wk"><td colspan="4"><b>Week 11</b> (Nov 2) — Non-contrastive learning; attention</td></tr>
 <tr>
   <td>Mon, Nov 02</td>
-  <td>Non-contrastive self-supervision: BYOL, VICReg — why representations do not collapse<span class="new">new</span></td>
+  <td>Non-contrastive self-supervision: BYOL, VICReg — why representations do not collapse</td>
   <td><a href="https://arxiv.org/abs/2006.07733" class="paper-link">Grill et al., BYOL</a>;
       <a href="https://arxiv.org/abs/2105.04906" class="paper-link">Bardes et al., VICReg</a></td>
   <td></td>
 </tr>
 <tr>
   <td>Wed, Nov 04</td>
-  <td>Sequence models and attention: the Transformer<span class="new">new</span></td>
+  <td>Sequence models and attention: the Transformer as self-supervised pretraining</td>
   <td><a href="https://arxiv.org/abs/1706.03762" class="paper-link">Vaswani et al., Attention is all you need</a></td>
   <td></td>
 </tr>
 
-<tr class="wk"><td colspan="4"><b>Week 12</b> (Nov 9) — Decisions; scale begins</td></tr>
-<tr>
-  <td>Mon, Nov 09</td>
-  <td>Learning to act: policy gradients, REINFORCE → PPO<span class="new">new</span></td>
-  <td><a href="https://doi.org/10.1007/BF00992696" class="paper-link">Williams, REINFORCE</a>;
-      <a href="https://arxiv.org/abs/1707.06347" class="paper-link">Schulman et al., PPO</a></td>
-  <td></td>
-</tr>
-
 <tr class="mod"><td colspan="4">
-  <b>Module IV — The foundation-model regime</b><br>
-  <span class="q">What changes when scale, compute and post-training dominate?</span>
+  <b>Module V — Scale and post-training</b><br>
+  <span class="q">What changes when scale and post-training dominate?</span>
   {% comment %} instructor planning note — stripped from the built page
   <span>Spine: Scaling laws → Chinchilla → FlashAttention → InstructGPT → DPO → R1</span>
   {% endcomment %}
 </td></tr>
 
+<tr class="wk"><td colspan="4"><b>Week 12</b> (Nov 9) — The economics of scale</td></tr>
 <tr>
-  <td>Wed, Nov 11</td>
-  <td>Scaling laws and compute-optimal training<span class="new">new</span></td>
+  <td>Mon, Nov 09</td>
+  <td>Scaling laws and compute-optimal training</td>
   <td><a href="https://arxiv.org/abs/2001.08361" class="paper-link">Kaplan et al., Scaling laws</a>;
       <a href="https://arxiv.org/abs/2203.15556" class="paper-link">Hoffmann et al., Chinchilla</a></td>
+  <td></td>
+</tr>
+<tr>
+  <td>Wed, Nov 11</td>
+  <td>How systems constraints shape model design: FlashAttention</td>
+  <td><a href="https://arxiv.org/abs/2205.14135" class="paper-link">Dao et al., FlashAttention</a></td>
   <td></td>
 </tr>
 <tr>
@@ -473,19 +472,18 @@ table.wide td:nth-child(3) { width: 34%; }
   <td><span class="due">Project midway report due</span></td>
 </tr>
 
-<tr class="wk"><td colspan="4"><b>Week 13</b> (Nov 16) — Systems and post-training</td></tr>
+<tr class="wk"><td colspan="4"><b>Week 13</b> (Nov 16) — Post-training</td></tr>
 <tr>
   <td>Mon, Nov 16</td>
-  <td>How systems constraints shape model design: FlashAttention<span class="new">new</span></td>
-  <td><a href="https://arxiv.org/abs/2205.14135" class="paper-link">Dao et al., FlashAttention</a></td>
+  <td>Post-training: RLHF → preference optimization</td>
+  <td><a href="https://arxiv.org/abs/2203.02155" class="paper-link">Ouyang et al., InstructGPT</a>;
+      <a href="https://arxiv.org/abs/2305.18290" class="paper-link">Rafailov et al., DPO</a></td>
   <td></td>
 </tr>
 <tr>
   <td>Wed, Nov 18</td>
-  <td>Post-training: RLHF → preference optimization → reasoning models<span class="new">new</span></td>
-  <td><a href="https://arxiv.org/abs/2203.02155" class="paper-link">Ouyang et al., InstructGPT</a>;
-      <a href="https://arxiv.org/abs/2305.18290" class="paper-link">Rafailov et al., DPO</a>;
-      <a href="https://arxiv.org/abs/2501.12948" class="paper-link">DeepSeek-R1</a></td>
+  <td>Reasoning models and verifiable rewards</td>
+  <td><a href="https://arxiv.org/abs/2501.12948" class="paper-link">DeepSeek-R1</a></td>
   <td></td>
 </tr>
 
@@ -498,8 +496,8 @@ table.wide td:nth-child(3) { width: 34%; }
 </tr>
 
 <tr class="mod"><td colspan="4">
-  <b>Module V — Understanding and deploying learned systems</b><br>
-  <span class="q">How do we interpret, act with, and evaluate modern models?</span>
+  <b>Module VI — Interpretability and evaluation</b><br>
+  <span class="q">How do we understand and evaluate what we have built?</span>
   {% comment %} instructor planning note — stripped from the built page
   <span>Spine: Superposition → Sparse autoencoders → ReAct → SWE-agent → HELM / τ-bench</span>
   {% endcomment %}
@@ -508,7 +506,7 @@ table.wide td:nth-child(3) { width: 34%; }
 <tr class="wk"><td colspan="4"><b>Week 15</b> (Nov 30) — Interpretability, agents, evaluation</td></tr>
 <tr>
   <td>Mon, Nov 30</td>
-  <td>Mechanistic interpretability: superposition and sparse autoencoders<span class="new">new</span></td>
+  <td>Mechanistic interpretability: superposition and sparse autoencoders</td>
   <td><a href="https://transformer-circuits.pub/2022/toy_model/index.html" class="paper-link">Elhage et al., Toy models of superposition</a>;
       <a href="https://transformer-circuits.pub/2023/monosemantic-features/index.html" class="paper-link">Bricken et al., Towards monosemanticity</a>;
       <a href="https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html" class="paper-link">Templeton et al., Scaling monosemanticity</a></td>
@@ -516,7 +514,7 @@ table.wide td:nth-child(3) { width: 34%; }
 </tr>
 <tr>
   <td>Wed, Dec 02</td>
-  <td>Agents and evaluation: tool use, and what benchmarks actually measure<span class="new">new</span></td>
+  <td>Agents and evaluation: tool use, and what benchmarks actually measure</td>
   <td><a href="https://arxiv.org/abs/2210.03629" class="paper-link">Yao et al., ReAct</a>;
       <a href="https://arxiv.org/abs/2405.15793" class="paper-link">Yang et al., SWE-agent</a>;
       <a href="https://arxiv.org/abs/2211.09110" class="paper-link">Liang et al., HELM</a>;
@@ -551,61 +549,71 @@ table.wide td:nth-child(3) { width: 34%; }
 
 ---
 
-## 🧩 Topics Covered
+<!-- ## 🧩 Topics Covered
 
-### Module I — Learning, optimization, generalization
+### Module I — Fundamentals of optimization
 
 *What solution does learning actually find?*
 
-**Optimization.** Finding the *best* model parameters in supervised learning. Stochastic gradient
-descent is emphasized given its predominance in modern ML: what gradient descent is, why it works,
-and its limitations, together with the necessary linear algebra, probability & statistics, and
-convexity.
+Finding the *best* model parameters, in the ordinary supervised setting. Stochastic gradient descent
+is emphasized given its predominance in modern ML: what gradient descent is, why it works, and its
+limitations, together with the necessary linear algebra, probability & statistics, and convexity.
 
-**Inference.** Finding a *set* of models rather than one. Bayesian inference and the posterior over
-model parameters, starting with closed-form cases: basics of Bayesian statistics, parametric models
+The module closes on **generalization**: why does an overparameterized model that can fit random
+labels still generalize? Lazy training and the neural tangent kernel, interpolation, double descent,
+and the implicit bias of gradient descent — the bridge from classical theory to modern practice.
+
+### Module II — Fundamentals of inference
+
+*What do we believe about a model, and how uncertain are we?*
+
+Finding a *set* of models rather than one. Bayesian inference and the posterior over model
+parameters, starting with closed-form cases: basics of Bayesian statistics, parametric models
 (working with Gaussians and friends), nonparametric models (Gaussian processes), and model
 selection. Then the intractable case — **approximate inference**: Laplace approximation, variational
-inference, Markov chain Monte Carlo, and neural network posteriors.
+inference, Markov chain Monte Carlo, and neural network posteriors. Finally, what a posterior buys
+you in practice: uncertainty estimates and out-of-distribution detection.
 
-**Generalization.** Why does an overparameterized model that can fit random labels still generalize?
-Lazy training and the neural tangent kernel, interpolation, double descent, and the implicit bias of
-gradient descent — the bridge from classical theory to modern practice.
-
-### Module II — Generative models
+### Module III — Generative modeling
 
 *How can we represent and fit complex distributions?*
 
-Latent-variable models and EM as the ancestor of modern generative modeling; variational
-autoencoders (the ELBO revisited, posterior collapse, discrete latents); implicit models
-(GANs, WGAN — divergences, instability, mode collapse); and the score-based family — normalizing
-flows, energy-based models, score matching, denoising diffusion, and flow matching.
+What unites this module is that **none of these methods can simply maximize a likelihood**, and each
+is a different way around that. Latent-variable models and EM optimize a bound; variational
+autoencoders generalize that bound with amortized inference (the ELBO revisited, posterior collapse,
+discrete latents); implicit models abandon likelihood altogether for a two-sample game (GANs, WGAN —
+divergences, instability, mode collapse); normalizing flows constrain the architecture to keep
+likelihood exact; and the score-based family sidesteps normalization entirely — energy-based models,
+score matching, denoising diffusion, and flow matching.
 
-### Module III — Representations, sequences, decisions
+### Module IV — Self-supervised learning
 
-*What internal state supports prediction and action?*
+*What can we learn without labels?*
 
-Self-supervised learning: contrastive objectives (Word2Vec, SimCLR) and non-contrastive ones
-(BYOL, VICReg), and why the latter do not collapse. Sequence modeling and attention, culminating in
-the Transformer. Then acting rather than predicting: policy gradients from REINFORCE to PPO.
+Self-supervised learning is supervised learning where the labels come free from the structure of the
+data: hide part of the input and predict it from the rest, then discard the prediction head and keep
+the representation. Contrastive objectives (Word2Vec, SimCLR) and non-contrastive ones (BYOL,
+VICReg), and why the latter do not collapse. Then the Transformer, whose next-token objective makes
+it the self-supervised pretraining recipe behind modern language models.
 
-### Module IV — The foundation-model regime
+### Module V — Scale and post-training
 
-*What changes when scale, compute and post-training dominate?*
+*What changes when scale and post-training dominate?*
 
-Scaling laws and compute-optimal training; how systems constraints (FlashAttention) shape what
-models get built. Post-training as the second half of the modern recipe: RLHF, direct preference
-optimization, and reasoning models trained with verifiable rewards.
+Scaling laws and compute-optimal training; how systems constraints (FlashAttention) shape what models
+get built at all. Then post-training as the second half of the modern recipe: RLHF, direct preference
+optimization — which reaches the same objective without a reinforcement-learning loop — and reasoning
+models trained against verifiable rewards.
 
-### Module V — Understanding and deploying learned systems
+### Module VI — Interpretability and evaluation
 
-*How do we interpret, act with, and evaluate modern models?*
+*How do we understand and evaluate what we have built?*
 
 Mechanistic interpretability: superposition, and sparse autoencoders as a tool for recovering
 interpretable features. Agents that use tools and act over long horizons. And evaluation — what
-benchmarks like HELM and τ-bench actually measure, and how measurement goes wrong.
+benchmarks like HELM and τ-bench actually measure, and how measurement goes wrong. -->
 
-## 👥 Course Assessment
+## 👥 Course Assessment (Tentative)
 
 | Component | Weight |
 |-----------|--------|
@@ -619,12 +627,12 @@ benchmarks like HELM and τ-bench actually measure, and how measurement goes wro
 | - Full Submission | 10% |
 | **Class Participation** | 5% |
 
-### Grade scale
+<!-- ### Grade scale
 
 97+ : A+ &nbsp;·&nbsp; 94–97 : A &nbsp;·&nbsp; 90–94 : A− &nbsp;·&nbsp; 87–90 : B+ &nbsp;·&nbsp;
 84–87 : B &nbsp;·&nbsp; 80–84 : B− &nbsp;·&nbsp; 77–80 : C+ &nbsp;·&nbsp; 74–77 : C &nbsp;·&nbsp;
 70–74 : C− &nbsp;·&nbsp; 67–70 : D+ &nbsp;·&nbsp; 64–67 : D &nbsp;·&nbsp; 60–64 : D− &nbsp;·&nbsp;
-&lt; 60 : F
+&lt; 60 : F -->
 
 ### Late submission policy
 
@@ -648,7 +656,7 @@ The schedule draws on the following books and review articles, referenced by abb
 - [**MML**](https://mml-book.github.io/) — Deisenroth, Faisal & Ong, *Mathematics for Machine Learning*
 - [**FML**](https://cs.nyu.edu/~mohri/mlbook/) — Mohri, Rostamizadeh & Talwalkar, *Foundations of Machine Learning*
 - [**LSML**](https://epubs.siam.org/doi/10.1137/16M1080173) — **Bottou et al.**, *Optimization Methods for Large-Scale Machine Learning* ([free arXiv version](https://arxiv.org/pdf/1606.04838))
-- [**HCT**](https://arxiv.org/pdf/2301.11235) — **Garrigos et al.**, *Handbook of Convergence Theorems for (Stochastic) Gradient Methods* — self-contained convergence proofs for GD and SGD across Lipschitz, smooth, convex, and strongly convex settings
+- [**HCT**](https://arxiv.org/pdf/2301.11235) — **Garrigos et al.**, *Handbook of Convergence Theorems for (Stochastic) Gradient Methods*. Only **Ch. 5** (Stochastic Gradient Descent, 9 pp.) is assigned; Ch. 3 covers deterministic gradient descent if you want it. The handbook is written to be read non-linearly — jump to the theorem you need and follow its links back for the assumptions
 
 **Inference**
 
@@ -665,19 +673,26 @@ Each lecture's assigned reading is in the [schedule](#️-schedule). This list c
 papers per module, in the order the ideas developed, so you can read a module as a single thread —
 useful for the midterm and for finding a project topic.
 
-**Module I — Learning, optimization, generalization**
+**Module I — Fundamentals of optimization**
 
 - [Robbins & Monro (1951)](https://doi.org/10.1214/aoms/1177729586), *A Stochastic Approximation Method* — the origin of SGD
 - **Bottou et al.**, [*Optimization Methods for Large-Scale Machine Learning*](https://arxiv.org/pdf/1606.04838) (**LSML**)
-- **Garrigos et al.**, [*Handbook of Convergence Theorems for (Stochastic) Gradient Methods*](https://arxiv.org/pdf/2301.11235) (**HCT**)
+- **Garrigos et al.**, [*Handbook of Convergence Theorems for (Stochastic) Gradient Methods*](https://arxiv.org/pdf/2301.11235) (**HCT**) — Ch. 5 only
 - **Jacot et al.**, [*Neural Tangent Kernel*](https://arxiv.org/abs/1806.07572)
 - **Tancik et al.**, [*Fourier Features*](https://arxiv.org/pdf/2006.10739)
 - **Zhang et al.**, [*Understanding Deep Learning Requires Rethinking Generalization*](https://arxiv.org/abs/1611.03530)
 - **Belkin et al.**, [*Reconciling Modern Machine Learning Practice and the Bias–Variance Trade-off*](https://arxiv.org/abs/1812.11118) — double descent
 - **Soudry et al.**, [*The Implicit Bias of Gradient Descent on Separable Data*](https://arxiv.org/abs/1710.10345)
+
+**Module II — Fundamentals of inference**
+
+This module is taught mainly from textbooks — [**PML-1**](https://probml.github.io/pml-book/book1.html)
+Ch. 6, [**PML-2**](https://probml.github.io/pml-book/book2.html) Ch. 2–3, 5–7, 10–12, 15, 17, 19, and
+[**GP**](https://gaussianprocess.org/gpml/chapters/) Ch. 2. One review article is assigned:
+
 - **Mohamed et al.**, [*Monte Carlo Gradient Estimation in Machine Learning*](https://www.jmlr.org/papers/volume21/19-346/19-346.pdf) (**MCGE**)
 
-**Module II — Generative models**
+**Module III — Generative modeling**
 
 - [Dempster et al. (1977)](https://doi.org/10.1111/j.2517-6161.1977.tb01600.x), *Maximum Likelihood from Incomplete Data via the EM Algorithm*
 - **Kingma et al.**, [*Auto-Encoding Variational Bayes*](https://arxiv.org/abs/1312.6114) — the VAE
@@ -690,17 +705,15 @@ useful for the midterm and for finding a project topic.
 - **Ho et al.**, [*Denoising Diffusion Probabilistic Models*](https://arxiv.org/abs/2006.11239)
 - **Lipman et al.**, [*Flow Matching for Generative Modeling*](https://arxiv.org/abs/2210.02747)
 
-**Module III — Representations, sequences, decisions**
+**Module IV — Self-supervised learning**
 
 - **Mikolov et al.**, [*Efficient Estimation of Word Representations in Vector Space*](https://arxiv.org/abs/1301.3781) — Word2Vec
 - **Chen et al.**, [*A Simple Framework for Contrastive Learning of Visual Representations*](https://arxiv.org/abs/2002.05709) — SimCLR
 - **Grill et al.**, [*Bootstrap Your Own Latent*](https://arxiv.org/abs/2006.07733) — BYOL
 - **Bardes et al.**, [*VICReg: Variance-Invariance-Covariance Regularization*](https://arxiv.org/abs/2105.04906)
 - **Vaswani et al.**, [*Attention Is All You Need*](https://arxiv.org/abs/1706.03762)
-- [Williams (1992)](https://doi.org/10.1007/BF00992696), *Simple Statistical Gradient-Following Algorithms* — REINFORCE
-- **Schulman et al.**, [*Proximal Policy Optimization Algorithms*](https://arxiv.org/abs/1707.06347)
 
-**Module IV — The foundation-model regime**
+**Module V — Scale and post-training**
 
 - **Kaplan et al.**, [*Scaling Laws for Neural Language Models*](https://arxiv.org/abs/2001.08361)
 - **Hoffmann et al.**, [*Training Compute-Optimal Large Language Models*](https://arxiv.org/abs/2203.15556) — Chinchilla
@@ -709,7 +722,7 @@ useful for the midterm and for finding a project topic.
 - **Rafailov et al.**, [*Direct Preference Optimization*](https://arxiv.org/abs/2305.18290)
 - **DeepSeek-AI et al.**, [*DeepSeek-R1*](https://arxiv.org/abs/2501.12948)
 
-**Module V — Understanding and deploying learned systems**
+**Module VI — Interpretability and evaluation**
 
 - **Elhage et al.**, [*Toy Models of Superposition*](https://transformer-circuits.pub/2022/toy_model/index.html)
 - **Bricken et al.**, [*Towards Monosemanticity*](https://transformer-circuits.pub/2023/monosemantic-features/index.html) — sparse autoencoders
