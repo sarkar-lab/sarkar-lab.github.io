@@ -301,13 +301,13 @@ table.wide td:nth-child(3) { width: 34%; }
 <tr>
   <td>Mon, Sep 21</td>
   <td>Monte Carlo, Markov chains</td>
-  <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 11.1–11.4, Ch. 12.1–12.2</td>
+  <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 11.1–11.4, Ch. 12.1</td>
   <td></td>
 </tr>
 <tr>
   <td>Wed, Sep 23</td>
   <td>MCMC: Metropolis–Hastings, Gibbs sampling, mixture models, HMC</td>
-  <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 12.1–12.3, 12.5, Ch. 17.1–17.4</td>
+  <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 12.2–12.3, 12.5</td>
   <td></td>
 </tr>
 <tr>
