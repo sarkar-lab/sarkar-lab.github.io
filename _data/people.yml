@@ -3,7 +3,22 @@ lab_members:
     image: ISMB_headshot.jpeg   # path relative to assets/img/
     position: Principal Investigator
     url:                        # optional personal/lab page
-                        
+  - name: Souvik Ghosh
+    image:                      # leave blank to show initials avatar
+    position: PhD Student
+    url:
+  - name: Chenxi Yang
+    image:                      # leave blank to show initials avatar
+    position: PhD Student
+    url:
+  - name: Pulkit Gupta
+    image:                      # leave blank to show initials avatar
+    position: PhD Student
+    url:
+  - name: Lingxin Chen
+    image:                      # leave blank to show initials avatar
+    position: Master's Student
+    url:
 
 friends:
   - name: Harsimran Kaur
