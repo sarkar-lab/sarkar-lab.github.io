@@ -78,7 +78,7 @@ to inspecting and evaluating the resulting systems.
 - **Location:** Featheringill Hall 129
 - **Instructor:** Hirak Sarkar — <a href="mailto:{{ 'hirak.sarkar@vanderbilt.edu' | encode_email }}">hirak.sarkar@vanderbilt.edu</a>
 - **Teaching Assistant:** Huy Tran — <a href="mailto:{{ 'huy.tran@vanderbilt.edu' | encode_email }}">huy.tran@vanderbilt.edu</a>
-- **Office Hours:** TBD
+- **Instructor Office Hours:** Tuesdays <i>02:00 PM - 03:00 PM</i>, Sony Building, Room A3015 — or by appointment
 
 ## 🎯 Learning Goals
 

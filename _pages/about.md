@@ -43,7 +43,7 @@ I am an **Assistant Professor** in the newly established [<span style="text-deco
 
 
 <span style="font-size:1.2rem; font-weight:700;">🚀 Join Me at Vanderbilt!</span> 
-I’m recruiting **a few graduate students for Fall 2026**. Email me at `<firstname>.<lastname>@vanderbilt.edu` if you’d like to explore possibilities, **and** click below
+I’m recruiting **a few graduate students for Fall 2027**. Email me at `<firstname>.<lastname>@vanderbilt.edu` if you’d like to explore possibilities, **and** click below
 <div align="center"> <a href="https://engineering.vanderbilt.edu/departments/computer-science/graduate/" target="_blank" style="background:#B3A369;color:#000;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;display:inline-block;"> 🚀 Apply to the CS/CCC Graduate Program at Vanderbilt </a> </div>
 
 
