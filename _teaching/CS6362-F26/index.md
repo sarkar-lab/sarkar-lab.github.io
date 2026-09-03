@@ -58,7 +58,7 @@ The course is divided into six modules. Readings for each lecture are listed in 
 
 | Module | Core question | Topics |
 |---|---|---|
-| **I. Fundamentals of optimization**<br><i>Weeks 1–3</i> | What solution does learning actually find? | Gradient descent and stochastic gradient descent; convergence; lazy training and the neural tangent kernel; interpolation, double descent, implicit bias |
+| **I. Fundamentals of optimization**<br><i>Weeks 1–3</i> | What solution does learning actually find? | Empirical risk minimization and VC dimension; gradient descent and stochastic gradient descent; convergence; lazy training and the neural tangent kernel; interpolation, double descent, implicit bias |
 | **II. Fundamentals of inference**<br><i>Weeks 3–6</i> | What do we believe about a model, and how uncertain are we? | Bayesian statistics; Gaussian processes; model selection; Laplace approximation and the ELBO; variational inference; Monte Carlo and MCMC; Bayesian neural networks; out-of-distribution detection |
 | **III. Generative modeling**<br><i>Weeks 7–10</i> | How can we represent and fit complex distributions? | EM and latent-variable models; variational autoencoders; posterior collapse; discrete latents; adversarial objectives and their instability; normalizing flows; energy-based models; score matching; diffusion; flow matching |
 | **IV. Self-supervised learning**<br><i>Weeks 10–11</i> | What can we learn without labels? | Contrastive and non-contrastive objectives; representation collapse; attention and the Transformer as self-supervised pretraining |
@@ -116,13 +116,20 @@ and the Thanksgiving break falls inside the window to give you time for the swee
 
 ### Quizzes
 
-Brief (15–20 minute) **pop quizzes** of 1–2 questions on the current or previous lectures,
-distributed randomly across the semester and completed at the end of class. Closed book, closed
-phone, closed *any* device — bring a pen or pencil.
+Quizzes are either **take-home** or **in-class**, and are announced in advance — there are no pop
+quizzes. Each covers 1–2 questions on the current or previous lectures.
 
-**Missing class when a quiz occurs, or arriving more than 25 minutes late, means *zero credit* for
-that quiz; exceptions are case-by-case (e.g. medical absence). Your lowest quiz score is
+In-class quizzes are brief (15–20 minutes) and completed at the end of class: closed book, closed
+phone, closed *any* device — bring a pen or pencil. Take-home quizzes are completed outside class
+and submitted by the stated deadline.
+
+**Missing an in-class quiz, or arriving more than 25 minutes late on that day, means *zero credit*
+for that quiz; exceptions are case-by-case (e.g. medical absence). Your lowest quiz score is
 dropped.**
+
+### Attendance
+
+Attendance is taken in class and is the basis for the class-participation portion of your grade.
 
 ### Project
 
@@ -252,26 +259,21 @@ table.wide td:nth-child(3) { width: 34%; }
   <td></td>
 </tr>
 
-<tr class="wk"><td colspan="4"><b>Week 2</b> (Aug 31) — Gradient descent</td></tr>
+<tr class="wk"><td colspan="4"><b>Week 2</b> (Aug 31) — Learning theory; gradient descent</td></tr>
 <tr>
   <td>Mon, Aug 31</td>
-  <td>Gradient descent</td>
-  <td><a href="https://mml-book.github.io/" class="paper-link">MML</a> Ch. 5, Ch. 7.1;
-      <a href="https://cs.nyu.edu/~mohri/mlbook/" class="paper-link">FML</a> App. A, B</td>
+  <td>Empirical risk minimization; VC dimension</td>
+  <td><a href="https://cs.nyu.edu/~mohri/mlbook/" class="paper-link">FML</a> Ch. 2, Ch. 3</td>
   <td></td>
 </tr>
 <tr>
   <td>Wed, Sep 02</td>
-  <td>Stochastic gradient descent</td>
-  <td><a href="https://epubs.siam.org/doi/10.1137/16M1080173" class="paper-link">LSML</a> Sec. 2–7;
+  <td>Gradient descent and stochastic gradient descent</td>
+  <td><a href="https://mml-book.github.io/" class="paper-link">MML</a> Ch. 5, Ch. 7.1;
+      <a href="https://cs.nyu.edu/~mohri/mlbook/" class="paper-link">FML</a> App. A, B;
+      <a href="https://epubs.siam.org/doi/10.1137/16M1080173" class="paper-link">LSML</a> Sec. 2–7;
       <a href="https://arxiv.org/pdf/2301.11235" class="paper-link">HCT</a> Ch. 5</td>
   <td></td>
-</tr>
-<tr>
-  <td>Thu, Sep 03</td>
-  <td></td>
-  <td></td>
-  <td><span class="due">Assignment 1 posted</span></td>
 </tr>
 
 <tr class="wk"><td colspan="4"><b>Week 3</b> (Sep 7) — Generalization; inference begins</td></tr>
@@ -283,7 +285,7 @@ table.wide td:nth-child(3) { width: 34%; }
       <a href="https://arxiv.org/abs/1611.03530" class="paper-link">Zhang et al., Rethinking generalization</a>;
       <a href="https://arxiv.org/abs/1812.11118" class="paper-link">Belkin et al., Double descent</a>;
       <a href="https://arxiv.org/abs/1710.10345" class="paper-link">Soudry et al., Implicit bias</a></td>
-  <td></td>
+  <td><span class="due">Assignment 1 posted</span></td>
 </tr>
 
 <tr class="mod"><td colspan="4">
@@ -308,7 +310,7 @@ table.wide td:nth-child(3) { width: 34%; }
   <td>Model selection, Laplace approximation, information theory basics, ELBO</td>
   <td><a href="https://probml.github.io/pml-book/book1.html" class="paper-link">PML-1</a> Ch. 6.1–6.2;
       <a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 5.1, Ch. 7.4, Ch. 10.1</td>
-  <td><span class="due">Assignment 2 posted</span></td>
+  <td><span class="due">Assignment 1 due</span></td>
 </tr>
 <tr>
   <td>Wed, Sep 16</td>
@@ -330,12 +332,6 @@ table.wide td:nth-child(3) { width: 34%; }
   <td>MCMC: Metropolis–Hastings, Gibbs sampling, mixture models, HMC</td>
   <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 12.2–12.3, 12.5</td>
   <td></td>
-</tr>
-<tr>
-  <td>Fri, Sep 25</td>
-  <td></td>
-  <td></td>
-  <td><span class="due">Assignment 2 due</span></td>
 </tr>
 
 <tr class="wk"><td colspan="4"><b>Week 6</b> (Sep 28) — Uncertainty; project proposals</td></tr>
@@ -639,7 +635,7 @@ and τ-bench measure, and the ways benchmark design fails. -->
 | - Midway Report | 5% |
 | - Presentation | 5% |
 | - Full Submission | 10% |
-| **Class Participation** | 5% |
+| **Class Participation** (attendance) | 5% |
 
 <!-- ### Grade scale
 
@@ -728,6 +724,7 @@ Textbook readings: [**PML-1**](https://probml.github.io/pml-book/book1.html) Ch.
 
 **Module V — Scale and post-training**
 
+- [*How to Scale Your Model*](https://jax-ml.github.io/scaling-book/) — online book on scaling model training and inference
 - **Kaplan et al.**, [*Scaling Laws for Neural Language Models*](https://arxiv.org/abs/2001.08361)
 - **Hoffmann et al.**, [*Training Compute-Optimal Large Language Models*](https://arxiv.org/abs/2203.15556) — Chinchilla
 - **Dao et al.**, [*FlashAttention*](https://arxiv.org/abs/2205.14135)
