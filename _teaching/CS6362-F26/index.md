@@ -59,8 +59,8 @@ The course is divided into six modules. Readings for each lecture are listed in 
 | Module | Core question | Topics |
 |---|---|---|
 | **I. Fundamentals of optimization**<br><i>Weeks 1–3</i> | What solution does learning actually find? | Empirical risk minimization and VC dimension; gradient descent and stochastic gradient descent; convergence; lazy training and the neural tangent kernel; interpolation, double descent, implicit bias |
-| **II. Fundamentals of inference**<br><i>Weeks 3–6</i> | What do we believe about a model, and how uncertain are we? | Bayesian statistics; Gaussian processes; model selection; Laplace approximation and the ELBO; variational inference; Monte Carlo and MCMC; Bayesian neural networks; out-of-distribution detection |
-| **III. Generative modeling**<br><i>Weeks 7–10</i> | How can we represent and fit complex distributions? | EM and latent-variable models; variational autoencoders; posterior collapse; discrete latents; adversarial objectives and their instability; normalizing flows; energy-based models; score matching; diffusion; flow matching |
+| **II. Fundamentals of inference**<br><i>Weeks 4–6</i> | What do we believe about a model, and how uncertain are we? | Bayesian statistics; Gaussian processes; model selection; Laplace approximation and the ELBO; variational inference; Monte Carlo and MCMC; Bayesian neural networks; out-of-distribution detection |
+| **III. Generative modeling**<br><i>Weeks 8–10</i> | How can we represent and fit complex distributions? | EM and latent-variable models; variational autoencoders; posterior collapse; adversarial objectives and their instability; normalizing flows; energy-based models; score matching; diffusion; flow matching |
 | **IV. Self-supervised learning**<br><i>Weeks 10–11</i> | What can we learn without labels? | Contrastive and non-contrastive objectives; representation collapse; attention and the Transformer as self-supervised pretraining |
 | **V. Scale and post-training**<br><i>Weeks 12–13</i> | What changes when scale and post-training dominate? | Scaling laws; compute-optimal training; systems constraints on model design; RLHF; direct preference optimization; reasoning models and verifiable rewards |
 | **VI. Interpretability and evaluation**<br><i>Week 15</i> | How do we understand and evaluate what we have built? | Superposition; sparse autoencoders and feature recovery; tool use and long-horizon agents; benchmark design and validity |
@@ -79,6 +79,7 @@ to inspecting and evaluating the resulting systems.
 - **Instructor:** Hirak Sarkar — <a href="mailto:{{ 'hirak.sarkar@vanderbilt.edu' | encode_email }}">hirak.sarkar@vanderbilt.edu</a>
 - **Teaching Assistant:** Huy Tran — <a href="mailto:{{ 'huy.tran@vanderbilt.edu' | encode_email }}">huy.tran@vanderbilt.edu</a>
 - **Instructor Office Hours:** Tuesdays <i>02:00 PM - 03:00 PM</i>, Sony Building, Room A3015 — or by appointment
+- **TA Office Hours:** Wednesdays <i>01:00 PM - 02:00 PM</i> (virtual) and <i>02:00 PM - 03:00 PM</i> (in person, Room A4009)
 
 ## 🎯 Learning Goals
 
@@ -97,7 +98,7 @@ By the end of this course, students will be able to:
 ## 🏗️ Syllabus
 
 This course is **lecture-based**, delivered primarily through slides with occasional whiteboard
-work. Slides will be posted to this page.
+work. Slides are posted only on Brightspace, not on this page.
 
 ### Assignments
 
@@ -276,10 +277,17 @@ table.wide td:nth-child(3) { width: 34%; }
   <td></td>
 </tr>
 
-<tr class="wk"><td colspan="4"><b>Week 3</b> (Sep 7) — Generalization; inference begins</td></tr>
+<tr class="wk"><td colspan="4"><b>Week 3</b> (Sep 7) — Convergence and generalization</td></tr>
 <tr>
   <td>Mon, Sep 07</td>
-  <td>What does SGD actually find? Lazy training and the neural tangent kernel; interpolation, double descent, implicit bias <span style="opacity:0.7;font-size:0.92em;">(Labor Day — class meets)</span></td>
+  <td>Convergence of SGD <span style="opacity:0.7;font-size:0.92em;">(Labor Day — class meets)</span></td>
+  <td></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td>Wed, Sep 09</td>
+  <td>What does SGD actually find? Lazy training and the neural tangent kernel; interpolation, double descent, implicit bias</td>
   <td><a href="https://mml-book.github.io/" class="paper-link">MML</a> Ch. 12.4;
       <a href="https://arxiv.org/abs/1806.07572" class="paper-link">Neural tangent kernel</a>;
       <a href="https://arxiv.org/abs/1611.03530" class="paper-link">Zhang et al., Rethinking generalization</a>;
@@ -288,6 +296,7 @@ table.wide td:nth-child(3) { width: 34%; }
   <td><span class="due">Assignment 1 posted</span></td>
 </tr>
 
+<tr class="wk"><td colspan="4"><b>Week 4</b> (Sep 14) — Inference begins; approximate inference</td></tr>
 <tr class="mod"><td colspan="4">
   <b>Module II — Fundamentals of inference</b><br>
   <span class="q">What do we believe about a model, and how uncertain are we?</span>
@@ -296,49 +305,41 @@ table.wide td:nth-child(3) { width: 34%; }
   {% endcomment %}
 </td></tr>
 <tr>
-  <td>Wed, Sep 09</td>
+  <td>Mon, Sep 14</td>
   <td>Bayesian statistics, linear regression; Gaussian processes</td>
   <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 2.3, Ch. 3.2, Ch. 15.2.1–15.2.4;
       <a href="https://gaussianprocess.org/gpml/chapters/" class="paper-link">GP</a> Ch. 2;
       <a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 3.7–3.8</td>
   <td></td>
 </tr>
-
-<tr class="wk"><td colspan="4"><b>Week 4</b> (Sep 14) — Approximate inference</td></tr>
 <tr>
-  <td>Mon, Sep 14</td>
+  <td>Wed, Sep 16</td>
   <td>Model selection, Laplace approximation, information theory basics, ELBO</td>
   <td><a href="https://probml.github.io/pml-book/book1.html" class="paper-link">PML-1</a> Ch. 6.1–6.2;
       <a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 5.1, Ch. 7.4, Ch. 10.1</td>
   <td><span class="due">Assignment 1 due</span></td>
 </tr>
+
+<tr class="wk"><td colspan="4"><b>Week 5</b> (Sep 21) — Variational inference; Monte Carlo begins</td></tr>
 <tr>
-  <td>Wed, Sep 16</td>
+  <td>Mon, Sep 21</td>
   <td>Variational inference and gradient-based estimators</td>
   <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 6.3.5, Ch. 10.2;
       <a href="https://www.jmlr.org/papers/volume21/19-346/19-346.pdf" class="paper-link">MCGE</a></td>
   <td></td>
 </tr>
-
-<tr class="wk"><td colspan="4"><b>Week 5</b> (Sep 21) — Monte Carlo and MCMC</td></tr>
 <tr>
-  <td>Mon, Sep 21</td>
+  <td>Wed, Sep 23</td>
   <td>Monte Carlo, Markov chains</td>
   <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 11.1–11.4, Ch. 12.1</td>
   <td></td>
 </tr>
-<tr>
-  <td>Wed, Sep 23</td>
-  <td>MCMC: Metropolis–Hastings, Gibbs sampling, mixture models, HMC</td>
-  <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 12.2–12.3, 12.5</td>
-  <td></td>
-</tr>
 
-<tr class="wk"><td colspan="4"><b>Week 6</b> (Sep 28) — Uncertainty; project proposals</td></tr>
+<tr class="wk"><td colspan="4"><b>Week 6</b> (Sep 28) — MCMC methods; project proposals</td></tr>
 <tr>
   <td>Mon, Sep 28</td>
-  <td>Bayesian neural networks; out-of-distribution detection</td>
-  <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 17.1–17.4, Ch. 19.1–19.7</td>
+  <td>MCMC: Metropolis–Hastings, Gibbs sampling, mixture models, HMC</td>
+  <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 12.2–12.3, 12.5</td>
   <td></td>
 </tr>
 <tr>
@@ -348,14 +349,21 @@ table.wide td:nth-child(3) { width: 34%; }
   <td><span class="due">Proposal presentations</span></td>
 </tr>
 
-<tr class="wk"><td colspan="4"><b>Week 7</b> (Oct 5) — Midterm; generative modeling begins</td></tr>
+<tr class="wk"><td colspan="4"><b>Week 7</b> (Oct 5) — Midterm; uncertainty</td></tr>
 <tr>
   <td>Mon, Oct 05</td>
   <td><b>Midterm</b> <span style="opacity:0.7;font-size:0.92em;">(Modules I–II: optimization and inference)</span></td>
   <td></td>
   <td><span class="due">Will be graded</span></td>
 </tr>
+<tr>
+  <td>Wed, Oct 07</td>
+  <td>Bayesian neural networks; out-of-distribution detection</td>
+  <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 17.1–17.4, Ch. 19.1–19.7</td>
+  <td></td>
+</tr>
 
+<tr class="wk"><td colspan="4"><b>Week 8</b> (Oct 12) — Generative modeling begins: EM and variational autoencoders</td></tr>
 <tr class="mod"><td colspan="4">
   <b>Module III — Generative modeling</b><br>
   <span class="q">How can we represent and fit complex distributions?</span>
@@ -364,25 +372,16 @@ table.wide td:nth-child(3) { width: 34%; }
   {% endcomment %}
 </td></tr>
 <tr>
-  <td>Wed, Oct 07</td>
+  <td>Mon, Oct 12</td>
   <td>EM and latent-variable models</td>
   <td><a href="https://doi.org/10.1111/j.2517-6161.1977.tb01600.x" class="paper-link">Dempster, Laird &amp; Rubin, EM</a></td>
   <td></td>
 </tr>
-
-<tr class="wk"><td colspan="4"><b>Week 8</b> (Oct 12) — Variational autoencoders</td></tr>
 <tr>
-  <td>Mon, Oct 12</td>
+  <td>Wed, Oct 14</td>
   <td>Variational autoencoders: the ELBO revisited, posterior collapse</td>
   <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 21.1–21.2, 21.4;
       <a href="https://arxiv.org/abs/1312.6114" class="paper-link">Kingma &amp; Welling, VAE</a></td>
-  <td></td>
-</tr>
-<tr>
-  <td>Wed, Oct 14</td>
-  <td>Variational autoencoders: disentanglement, discrete latents</td>
-  <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 21.3, 21.5–21.6;
-      <a href="https://arxiv.org/abs/1711.00937" class="paper-link">VQ-VAE</a></td>
   <td></td>
 </tr>
 
