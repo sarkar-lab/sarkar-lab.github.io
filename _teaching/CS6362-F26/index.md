@@ -282,7 +282,7 @@ table.wide td:nth-child(3) { width: 34%; }
   <td>Mon, Sep 07</td>
   <td>Convergence of SGD <span style="opacity:0.7;font-size:0.92em;">(Labor Day — class meets)</span></td>
   <td></td>
-  <td></td>
+  <td><span class="due">Assignment 1 posted</span></td>
 </tr>
 
 <tr>
@@ -293,7 +293,7 @@ table.wide td:nth-child(3) { width: 34%; }
       <a href="https://arxiv.org/abs/1611.03530" class="paper-link">Zhang et al., Rethinking generalization</a>;
       <a href="https://arxiv.org/abs/1812.11118" class="paper-link">Belkin et al., Double descent</a>;
       <a href="https://arxiv.org/abs/1710.10345" class="paper-link">Soudry et al., Implicit bias</a></td>
-  <td><span class="due">Assignment 1 posted</span></td>
+  <td><span class="due">Quiz</span></td>
 </tr>
 
 <tr class="wk"><td colspan="4"><b>Week 4</b> (Sep 14) — Inference begins; approximate inference</td></tr>
@@ -310,14 +310,14 @@ table.wide td:nth-child(3) { width: 34%; }
   <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 2.3, Ch. 3.2, Ch. 15.2.1–15.2.4;
       <a href="https://gaussianprocess.org/gpml/chapters/" class="paper-link">GP</a> Ch. 2;
       <a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 3.7–3.8</td>
-  <td></td>
+  <td><span class="due">Assignment 1 due</span></td>
 </tr>
 <tr>
   <td>Wed, Sep 16</td>
   <td>Model selection, Laplace approximation, information theory basics, ELBO</td>
   <td><a href="https://probml.github.io/pml-book/book1.html" class="paper-link">PML-1</a> Ch. 6.1–6.2;
       <a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 5.1, Ch. 7.4, Ch. 10.1</td>
-  <td><span class="due">Assignment 1 due</span></td>
+  <td><span class="due">Assignment 2 posted</span></td>
 </tr>
 
 <tr class="wk"><td colspan="4"><b>Week 5</b> (Sep 21) — Variational inference; Monte Carlo begins</td></tr>
@@ -340,7 +340,7 @@ table.wide td:nth-child(3) { width: 34%; }
   <td>Mon, Sep 28</td>
   <td>MCMC: Metropolis–Hastings, Gibbs sampling, mixture models, HMC</td>
   <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 12.2–12.3, 12.5</td>
-  <td></td>
+  <td><span class="due">Assignment 2 due</span></td>
 </tr>
 <tr>
   <td>Wed, Sep 30</td>
