@@ -282,6 +282,12 @@ table.wide td:nth-child(3) { width: 34%; }
   <td>Mon, Sep 07</td>
   <td>Convergence of SGD <span style="opacity:0.7;font-size:0.92em;">(Labor Day — class meets)</span></td>
   <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>Tue, Sep 08</td>
+  <td></td>
+  <td></td>
   <td><span class="due">Assignment 1 posted</span></td>
 </tr>
 
@@ -310,6 +316,12 @@ table.wide td:nth-child(3) { width: 34%; }
   <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 2.3, Ch. 3.2, Ch. 15.2.1–15.2.4;
       <a href="https://gaussianprocess.org/gpml/chapters/" class="paper-link">GP</a> Ch. 2;
       <a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 3.7–3.8</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Tue, Sep 15</td>
+  <td></td>
+  <td></td>
   <td><span class="due">Assignment 1 due</span></td>
 </tr>
 <tr>
