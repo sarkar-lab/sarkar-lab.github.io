@@ -78,7 +78,7 @@ to inspecting and evaluating the resulting systems.
 - **Location:** Featheringill Hall 129
 - **Instructor:** Hirak Sarkar — <a href="mailto:{{ 'hirak.sarkar@vanderbilt.edu' | encode_email }}">hirak.sarkar@vanderbilt.edu</a>
 - **Teaching Assistant:** Huy Tran — <a href="mailto:{{ 'huy.tran@vanderbilt.edu' | encode_email }}">huy.tran@vanderbilt.edu</a>
-- **Instructor Office Hours:** Tuesdays <i>02:00 PM - 03:00 PM</i>, Sony Building, Room A3015 — or by appointment
+- **Instructor Office Hours:** Thursdays <i>02:00 PM - 03:00 PM</i>, Sony Building, Room A3015 — or by appointment
 - **TA Office Hours:** Wednesdays <i>01:00 PM - 02:00 PM</i> (virtual) and <i>02:00 PM - 03:00 PM</i> (in person, Room A4009)
 
 ## 🎯 Learning Goals
@@ -391,7 +391,7 @@ table.wide td:nth-child(3) { width: 34%; }
 </tr>
 <tr>
   <td>Wed, Oct 14</td>
-  <td>Variational autoencoders: the ELBO revisited, posterior collapse</td>
+  <td>Variational autoencoders: amortized inference and the reparameterization trick; posterior collapse</td>
   <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 21.1–21.2, 21.4;
       <a href="https://arxiv.org/abs/1312.6114" class="paper-link">Kingma &amp; Welling, VAE</a></td>
   <td></td>
