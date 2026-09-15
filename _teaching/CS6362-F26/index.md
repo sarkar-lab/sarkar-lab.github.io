@@ -132,6 +132,11 @@ dropped.**
 
 Attendance is taken in class and is the basis for the class-participation portion of your grade.
 
+**Update (Sep 15, 2026):** You can miss up to 20% of classes without losing attendance points. If
+you attend at least 80% of the classes, you will receive full attendance credit. No documentation
+is needed for these missed classes. Absences beyond that 20% threshold will count against your
+attendance/class-participation grade.
+
 ### Project
 
 The latter half of the semester is devoted to a research project in teams of **1–2**. You will go
