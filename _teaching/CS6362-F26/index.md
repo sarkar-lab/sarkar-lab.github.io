@@ -81,6 +81,10 @@ to inspecting and evaluating the resulting systems.
 - **Instructor Office Hours:** Thursdays <i>02:00 PM - 03:00 PM</i>, Sony Building, Room A3015 — or by appointment
 - **TA Office Hours:** Wednesdays <i>01:00 PM - 02:00 PM</i> (virtual) and <i>02:00 PM - 03:00 PM</i> (in person, Room A4009)
 
+## 📝 Errata
+
+[Corrections and clarifications to lecture slides](/courses/CS6362-F26/errata/), updated as issues are found.
+
 ## 🎯 Learning Goals
 
 By the end of this course, students will be able to:
@@ -298,26 +302,20 @@ table.wide td:nth-child(3) { width: 34%; }
 
 <tr>
   <td>Wed, Sep 09</td>
-  <td>What does SGD actually find? Lazy training and the neural tangent kernel; interpolation, double descent, implicit bias</td>
+  <td>SGD convergence analysis: convexity and smoothness recap, GD stability and eigenvalue analysis, convergence rate of SGD, moment assumptions
+  </td>
   <td><a href="https://mml-book.github.io/" class="paper-link">MML</a> Ch. 12.4;
-      <a href="https://arxiv.org/abs/1806.07572" class="paper-link">Neural tangent kernel</a>;
-      <a href="https://arxiv.org/abs/1611.03530" class="paper-link">Zhang et al., Rethinking generalization</a>;
-      <a href="https://arxiv.org/abs/1812.11118" class="paper-link">Belkin et al., Double descent</a>;
-      <a href="https://arxiv.org/abs/1710.10345" class="paper-link">Soudry et al., Implicit bias</a></td>
+      <a href="https://epubs.siam.org/doi/10.1137/16M1080173" class="paper-link">LSML</a> Sec. 2–7;
+      <a href="https://arxiv.org/pdf/2301.11235" class="paper-link">HCT</a> Ch. 5
+  </td>
   <td><span class="due">Quiz</span></td>
 </tr>
 
-<tr class="wk"><td colspan="4"><b>Week 4</b> (Sep 14) — Inference begins; approximate inference</td></tr>
-<tr class="mod"><td colspan="4">
-  <b>Module II — Fundamentals of inference</b><br>
-  <span class="q">What do we believe about a model, and how uncertain are we?</span>
-  {% comment %} instructor planning note — stripped from the built page
-  <span>Spine: Bayes → Gaussian processes → Laplace / ELBO → variational inference → MCMC</span>
-  {% endcomment %}
-</td></tr>
+<tr class="wk"><td colspan="4"><b>Week 4</b> (Sep 14) — Continuing optimization/generalization (ran long)</td></tr>
 <tr>
   <td>Mon, Sep 14</td>
-  <td>Bayesian statistics, linear regression; Gaussian processes</td>
+  <td>Continued: SGD convergence analysis — strong convexity, stability, convergence rate, moment assumptions, minibatching and variance reduction (SAG/SAGA)
+      <span style="opacity:0.7;font-size:0.92em;">(TBD — displaced "Bayesian statistics, linear regression; Gaussian processes", needs a new slot)</span></td>
   <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 2.3, Ch. 3.2, Ch. 15.2.1–15.2.4;
       <a href="https://gaussianprocess.org/gpml/chapters/" class="paper-link">GP</a> Ch. 2;
       <a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 3.7–3.8</td>
@@ -331,11 +329,21 @@ table.wide td:nth-child(3) { width: 34%; }
 </tr>
 <tr>
   <td>Wed, Sep 16</td>
-  <td>Model selection, Laplace approximation, information theory basics, ELBO</td>
-  <td><a href="https://probml.github.io/pml-book/book1.html" class="paper-link">PML-1</a> Ch. 6.1–6.2;
+  <td>Momentum (heavy ball) and Nesterov acceleration; the ADAM optimizer; neural tangent kernel and lazy training
+      <span style="opacity:0.7;font-size:0.92em;">(TBD — displaced "Model selection, Laplace approximation, information theory basics, ELBO", needs a new slot; interpolation, double descent, and implicit bias still not covered)</span></td>
+  <td><a href="https://arxiv.org/abs/1806.07572" class="paper-link">Neural tangent kernel</a>;
+      <a href="https://probml.github.io/pml-book/book1.html" class="paper-link">PML-1</a> Ch. 6.1–6.2;
       <a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 5.1, Ch. 7.4, Ch. 10.1</td>
-  <td><span class="due">Assignment 2 posted</span></td>
+  <td></td>
 </tr>
+
+<tr class="mod"><td colspan="4">
+  <b>Module II — Fundamentals of inference</b> <span style="opacity:0.7;font-size:0.92em;">(TBD — start date pending, was Sep 14)</span><br>
+  <span class="q">What do we believe about a model, and how uncertain are we?</span>
+  {% comment %} instructor planning note — stripped from the built page
+  <span>Spine: Bayes → Gaussian processes → Laplace / ELBO → variational inference → MCMC</span>
+  {% endcomment %}
+</td></tr>
 
 <tr class="wk"><td colspan="4"><b>Week 5</b> (Sep 21) — Variational inference; Monte Carlo begins</td></tr>
 <tr>
@@ -357,7 +365,7 @@ table.wide td:nth-child(3) { width: 34%; }
   <td>Mon, Sep 28</td>
   <td>MCMC: Metropolis–Hastings, Gibbs sampling, mixture models, HMC</td>
   <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 12.2–12.3, 12.5</td>
-  <td><span class="due">Assignment 2 due</span></td>
+  <td></td>
 </tr>
 <tr>
   <td>Wed, Sep 30</td>
@@ -366,12 +374,12 @@ table.wide td:nth-child(3) { width: 34%; }
   <td><span class="due">Proposal presentations</span></td>
 </tr>
 
-<tr class="wk"><td colspan="4"><b>Week 7</b> (Oct 5) — Midterm; uncertainty</td></tr>
+<tr class="wk"><td colspan="4"><b>Week 7</b> (Oct 5) — Uncertainty</td></tr>
 <tr>
   <td>Mon, Oct 05</td>
-  <td><b>Midterm</b> <span style="opacity:0.7;font-size:0.92em;">(Modules I–II: optimization and inference)</span></td>
+  <td><span style="opacity:0.7;font-size:0.92em;">TBD — date freed up by the midterm moving to Oct 12</span></td>
   <td></td>
-  <td><span class="due">Will be graded</span></td>
+  <td></td>
 </tr>
 <tr>
   <td>Wed, Oct 07</td>
@@ -380,7 +388,13 @@ table.wide td:nth-child(3) { width: 34%; }
   <td></td>
 </tr>
 
-<tr class="wk"><td colspan="4"><b>Week 8</b> (Oct 12) — Generative modeling begins: EM and variational autoencoders</td></tr>
+<tr class="wk"><td colspan="4"><b>Week 8</b> (Oct 12) — Midterm; generative modeling begins</td></tr>
+<tr>
+  <td>Mon, Oct 12</td>
+  <td><b>Midterm</b> <span style="opacity:0.7;font-size:0.92em;">(Modules I–II: optimization and inference)</span></td>
+  <td></td>
+  <td><span class="due">Will be graded</span></td>
+</tr>
 <tr class="mod"><td colspan="4">
   <b>Module III — Generative modeling</b><br>
   <span class="q">How can we represent and fit complex distributions?</span>
@@ -389,8 +403,8 @@ table.wide td:nth-child(3) { width: 34%; }
   {% endcomment %}
 </td></tr>
 <tr>
-  <td>Mon, Oct 12</td>
-  <td>EM and latent-variable models</td>
+  <td style="opacity:0.7;font-size:0.92em;">TBD</td>
+  <td><span style="opacity:0.7;font-size:0.92em;">TBD — EM and latent-variable models, needs a new slot (was Oct 12)</span></td>
   <td><a href="https://doi.org/10.1111/j.2517-6161.1977.tb01600.x" class="paper-link">Dempster, Laird &amp; Rubin, EM</a></td>
   <td></td>
 </tr>
@@ -486,7 +500,7 @@ table.wide td:nth-child(3) { width: 34%; }
   <td>Wed, Nov 11</td>
   <td>How systems constraints shape model design: FlashAttention</td>
   <td><a href="https://arxiv.org/abs/2205.14135" class="paper-link">Dao et al., FlashAttention</a></td>
-  <td><span class="due">Assignment 3 posted</span></td>
+  <td></td>
 </tr>
 <tr>
   <td>Fri, Nov 13</td>
@@ -544,13 +558,6 @@ table.wide td:nth-child(3) { width: 34%; }
       <a href="https://arxiv.org/abs/2406.12045" class="paper-link">Yao et al., τ-bench</a></td>
   <td></td>
 </tr>
-<tr>
-  <td>Fri, Dec 04</td>
-  <td></td>
-  <td></td>
-  <td><span class="due">Assignment 3 due</span></td>
-</tr>
-
 <tr class="wk"><td colspan="4"><b>Week 16</b> (Dec 7) — Project presentations</td></tr>
 <tr>
   <td>Mon, Dec 07</td>
