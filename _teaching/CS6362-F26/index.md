@@ -314,11 +314,10 @@ table.wide td:nth-child(3) { width: 34%; }
 <tr class="wk"><td colspan="4"><b>Week 4</b> (Sep 14) — Continuing optimization/generalization (ran long)</td></tr>
 <tr>
   <td>Mon, Sep 14</td>
-  <td>Continued: SGD convergence analysis — strong convexity, stability, convergence rate, moment assumptions, minibatching and variance reduction (SAG/SAGA)
-      <span style="opacity:0.7;font-size:0.92em;">(TBD — displaced "Bayesian statistics, linear regression; Gaussian processes", needs a new slot)</span></td>
-  <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 2.3, Ch. 3.2, Ch. 15.2.1–15.2.4;
-      <a href="https://gaussianprocess.org/gpml/chapters/" class="paper-link">GP</a> Ch. 2;
-      <a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 3.7–3.8</td>
+  <td>Continued: SGD convergence analysis — strong convexity, stability, convergence rate, moment assumptions, minibatching and variance reduction (SAG/SAGA)</td>
+  <td><a href="https://arxiv.org/pdf/1606.04838" class="paper-link">Bottou et al., Optimization Methods for Large-Scale Machine Learning</a>;
+      <a href="https://arxiv.org/abs/1202.6258" class="paper-link">Le Roux et al., SAG</a>;
+      <a href="https://arxiv.org/abs/1407.0202" class="paper-link">Defazio et al., SAGA</a></td>
   <td></td>
 </tr>
 <tr>
@@ -329,11 +328,8 @@ table.wide td:nth-child(3) { width: 34%; }
 </tr>
 <tr>
   <td>Wed, Sep 16</td>
-  <td>Momentum (heavy ball) and Nesterov acceleration; the ADAM optimizer; neural tangent kernel and lazy training
-      <span style="opacity:0.7;font-size:0.92em;">(TBD — displaced "Model selection, Laplace approximation, information theory basics, ELBO", needs a new slot; interpolation, double descent, and implicit bias still not covered)</span></td>
-  <td><a href="https://arxiv.org/abs/1806.07572" class="paper-link">Neural tangent kernel</a>;
-      <a href="https://probml.github.io/pml-book/book1.html" class="paper-link">PML-1</a> Ch. 6.1–6.2;
-      <a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 5.1, Ch. 7.4, Ch. 10.1</td>
+  <td>Momentum (heavy ball) and Nesterov acceleration; the ADAM optimizer; neural tangent kernel and lazy training</td>
+  <td><a href="https://arxiv.org/abs/1806.07572" class="paper-link">Neural tangent kernel</a></td>
   <td></td>
 </tr>
 
@@ -348,15 +344,15 @@ table.wide td:nth-child(3) { width: 34%; }
 <tr class="wk"><td colspan="4"><b>Week 5</b> (Sep 21) — Variational inference; Monte Carlo begins</td></tr>
 <tr>
   <td>Mon, Sep 21</td>
-  <td>Variational inference and gradient-based estimators</td>
+  <td>What is inference? Latent variables and posterior reasoning</td>
   <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 6.3.5, Ch. 10.2;
       <a href="https://www.jmlr.org/papers/volume21/19-346/19-346.pdf" class="paper-link">MCGE</a></td>
   <td></td>
 </tr>
 <tr>
   <td>Wed, Sep 23</td>
-  <td>Monte Carlo, Markov chains</td>
-  <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 11.1–11.4, Ch. 12.1</td>
+  <td>Variational inference, ELBO and VAE</td>
+  <td></td>
   <td></td>
 </tr>
 
@@ -402,12 +398,6 @@ table.wide td:nth-child(3) { width: 34%; }
   <span>Spine: EM → VAE → GAN → WGAN → Score matching → DDPM</span>
   {% endcomment %}
 </td></tr>
-<tr>
-  <td style="opacity:0.7;font-size:0.92em;">TBD</td>
-  <td><span style="opacity:0.7;font-size:0.92em;">TBD — EM and latent-variable models, needs a new slot (was Oct 12)</span></td>
-  <td><a href="https://doi.org/10.1111/j.2517-6161.1977.tb01600.x" class="paper-link">Dempster, Laird &amp; Rubin, EM</a></td>
-  <td></td>
-</tr>
 <tr>
   <td>Wed, Oct 14</td>
   <td>Variational autoencoders: amortized inference and the reparameterization trick; posterior collapse</td>
