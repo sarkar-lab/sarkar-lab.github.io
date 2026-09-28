@@ -367,7 +367,7 @@ table.wide td:nth-child(3) { width: 34%; }
   <td>Wed, Sep 30</td>
   <td>Project introductions</td>
   <td></td>
-  <td><span class="due">Proposal presentations</span></td>
+  <td></td>
 </tr>
 
 <tr class="wk"><td colspan="4"><b>Week 7</b> (Oct 5) — Uncertainty</td></tr>
@@ -381,7 +381,7 @@ table.wide td:nth-child(3) { width: 34%; }
   <td>Wed, Oct 07</td>
   <td>Bayesian neural networks; out-of-distribution detection</td>
   <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 17.1–17.4, Ch. 19.1–19.7</td>
-  <td></td>
+  <td><span class="due">Proposal presentations</span></td>
 </tr>
 
 <tr class="wk"><td colspan="4"><b>Week 8</b> (Oct 12) — Midterm; generative modeling begins</td></tr>
