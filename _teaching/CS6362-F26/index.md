@@ -374,7 +374,7 @@ table.wide td:nth-child(3) { width: 34%; }
 <tr class="wk"><td colspan="4"><b>Week 7</b> (Oct 5) — Uncertainty</td></tr>
 <tr>
   <td>Mon, Oct 05</td>
-  <td>Guest lecture</td>
+  <td>Guest lecture: Felix Zhou</td>
   <td></td>
   <td></td>
 </tr>
