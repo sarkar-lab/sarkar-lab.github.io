@@ -356,24 +356,25 @@ table.wide td:nth-child(3) { width: 34%; }
   <td></td>
 </tr>
 
-<tr class="wk"><td colspan="4"><b>Week 6</b> (Sep 28) — MCMC methods; project proposals</td></tr>
+<tr class="wk"><td colspan="4"><b>Week 6</b> (Sep 28) — Variational autoencoders; MCMC methods</td></tr>
 <tr>
   <td>Mon, Sep 28</td>
-  <td>MCMC: Metropolis–Hastings, Gibbs sampling, mixture models, HMC</td>
-  <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 12.2–12.3, 12.5</td>
+  <td>Variational autoencoders: amortized inference and the reparameterization trick; posterior collapse</td>
+  <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 21.1–21.2, 21.4;
+      <a href="https://arxiv.org/abs/1312.6114" class="paper-link">Kingma &amp; Welling, VAE</a></td>
   <td></td>
 </tr>
 <tr>
   <td>Wed, Sep 30</td>
-  <td>Project introductions</td>
-  <td></td>
-  <td></td>
+  <td>MCMC: Metropolis–Hastings, Gibbs sampling, mixture models, HMC</td>
+  <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 12.2–12.3, 12.5</td>
+  <td><span class="due">Assignment 2 posted</span></td>
 </tr>
 
 <tr class="wk"><td colspan="4"><b>Week 7</b> (Oct 5) — Uncertainty</td></tr>
 <tr>
   <td>Mon, Oct 05</td>
-  <td><span style="opacity:0.7;font-size:0.92em;">TBD — date freed up by the midterm moving to Oct 12</span></td>
+  <td>Guest lecture</td>
   <td></td>
   <td></td>
 </tr>
@@ -381,32 +382,31 @@ table.wide td:nth-child(3) { width: 34%; }
   <td>Wed, Oct 07</td>
   <td>Bayesian neural networks; out-of-distribution detection</td>
   <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 17.1–17.4, Ch. 19.1–19.7</td>
-  <td><span class="due">Proposal presentations</span></td>
+  <td><span class="due">Proposal submission due</span></td>
 </tr>
 
-<tr class="wk"><td colspan="4"><b>Week 8</b> (Oct 12) — Midterm; generative modeling begins</td></tr>
+<tr class="wk"><td colspan="4"><b>Week 8</b> (Oct 12) — Midterm; project presentations</td></tr>
 <tr>
   <td>Mon, Oct 12</td>
   <td><b>Midterm</b> <span style="opacity:0.7;font-size:0.92em;">(Modules I–II: optimization and inference)</span></td>
   <td></td>
   <td><span class="due">Will be graded</span></td>
 </tr>
+<tr>
+  <td>Wed, Oct 14</td>
+  <td><b>Project presentation</b></td>
+  <td></td>
+  <td><span class="due">Assignment 2 due</span></td>
+</tr>
+
+<tr class="wk"><td colspan="4"><b>Week 9</b> (Oct 19) — Implicit and invertible models</td></tr>
 <tr class="mod"><td colspan="4">
   <b>Module III — Generative modeling</b><br>
   <span class="q">How can we represent and fit complex distributions?</span>
   {% comment %} instructor planning note — stripped from the built page
-  <span>Spine: EM → VAE → GAN → WGAN → Score matching → DDPM</span>
+  <span>Spine: EM → GAN → WGAN → Score matching → DDPM</span>
   {% endcomment %}
 </td></tr>
-<tr>
-  <td>Wed, Oct 14</td>
-  <td>Variational autoencoders: amortized inference and the reparameterization trick; posterior collapse</td>
-  <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 21.1–21.2, 21.4;
-      <a href="https://arxiv.org/abs/1312.6114" class="paper-link">Kingma &amp; Welling, VAE</a></td>
-  <td></td>
-</tr>
-
-<tr class="wk"><td colspan="4"><b>Week 9</b> (Oct 19) — Implicit and invertible models</td></tr>
 <tr>
   <td>Mon, Oct 19</td>
   <td>Implicit models: GANs → WGAN — divergences, instability, mode collapse</td>
