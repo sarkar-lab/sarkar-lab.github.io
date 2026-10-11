@@ -382,21 +382,27 @@ table.wide td:nth-child(3) { width: 34%; }
   <td>Wed, Oct 07</td>
   <td>Bayesian neural networks; out-of-distribution detection</td>
   <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 17.1–17.4, Ch. 19.1–19.7</td>
-  <td><span class="due">Proposal submission due</span></td>
+  <td></td>
 </tr>
 
-<tr class="wk"><td colspan="4"><b>Week 8</b> (Oct 12) — Midterm; project presentations</td></tr>
+<tr class="wk"><td colspan="4"><b>Week 8</b> (Oct 12) — Exam preparation; project proposals</td></tr>
 <tr>
   <td>Mon, Oct 12</td>
-  <td><b>Midterm</b> <span style="opacity:0.7;font-size:0.92em;">(Modules I–II: optimization and inference)</span></td>
+  <td>Exam preparation and project proposal lectures</td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>Wed, Oct 14</td>
+  <td><b>Midterm</b> <span style="opacity:0.7;font-size:0.92em;">(Modules I–II: optimization and inference; 3:35 PM onwards)</span></td>
   <td></td>
   <td><span class="due">Will be graded</span></td>
 </tr>
 <tr>
-  <td>Wed, Oct 14</td>
-  <td><b>Project presentation</b></td>
+  <td>Fri, Oct 16</td>
   <td></td>
-  <td><span class="due">Assignment 2 due</span></td>
+  <td></td>
+  <td><span class="due">Proposal submission due — 11:59 PM</span></td>
 </tr>
 
 <tr class="wk"><td colspan="4"><b>Week 9</b> (Oct 19) — Implicit and invertible models</td></tr>
@@ -419,7 +425,7 @@ table.wide td:nth-child(3) { width: 34%; }
   <td>Normalizing flows; energy-based models</td>
   <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 23–24;
       <a href="https://arxiv.org/abs/1505.05770" class="paper-link">Rezende &amp; Mohamed, Normalizing flows</a></td>
-  <td></td>
+  <td><span class="due">Assignment 2 due — 11:59 PM</span></td>
 </tr>
 <tr>
   <td>Thu–Fri, Oct 22–23</td>
