@@ -61,8 +61,8 @@ The course is divided into six modules. Readings for each lecture are listed in 
 | **I. Fundamentals of optimization**<br><i>Weeks 1–3</i> | What solution does learning actually find? | Empirical risk minimization and VC dimension; gradient descent and stochastic gradient descent; convergence; lazy training and the neural tangent kernel; interpolation, double descent, implicit bias |
 | **II. Fundamentals of inference**<br><i>Weeks 4–6</i> | What do we believe about a model, and how uncertain are we? | Bayesian statistics; Gaussian processes; model selection; Laplace approximation and the ELBO; variational inference; Monte Carlo and MCMC; Bayesian neural networks; out-of-distribution detection |
 | **III. Generative modeling**<br><i>Weeks 8–10</i> | How can we represent and fit complex distributions? | EM and latent-variable models; variational autoencoders; posterior collapse; adversarial objectives and their instability; normalizing flows; energy-based models; score matching; diffusion; flow matching |
-| **IV. Self-supervised learning**<br><i>Weeks 10–11</i> | What can we learn without labels? | Contrastive and non-contrastive objectives; representation collapse; attention and the Transformer as self-supervised pretraining |
-| **V. Scale and post-training**<br><i>Weeks 12–13</i> | What changes when scale and post-training dominate? | Scaling laws; compute-optimal training; systems constraints on model design; RLHF; direct preference optimization; reasoning models and verifiable rewards |
+| **IV. Self-supervised learning**<br><i>Week 12</i> | What can we learn without labels? | Contrastive and non-contrastive objectives; representation collapse; attention and the Transformer as self-supervised pretraining |
+| **V. Scale and post-training**<br><i>Week 13</i> | What changes when scale and post-training dominate? | Scaling laws; compute-optimal training; RLHF; direct preference optimization; reasoning models and verifiable rewards |
 | **VI. Interpretability and evaluation**<br><i>Week 15</i> | How do we understand and evaluate what we have built? | Superposition; sparse autoencoders and feature recovery; tool use and long-horizon agents; benchmark design and validity |
 
 Modules I and II treat the supervised setting: regression, Gaussian processes and Bayesian neural
@@ -398,12 +398,6 @@ table.wide td:nth-child(3) { width: 34%; }
   <td></td>
   <td><span class="due">Will be graded</span></td>
 </tr>
-<tr>
-  <td>Fri, Oct 16</td>
-  <td></td>
-  <td></td>
-  <td><span class="due">Proposal submission due — 11:59 PM</span></td>
-</tr>
 
 <tr class="wk"><td colspan="4"><b>Week 9</b> (Oct 19) — Implicit and invertible models</td></tr>
 <tr class="mod"><td colspan="4">
@@ -418,7 +412,7 @@ table.wide td:nth-child(3) { width: 34%; }
   <td>Implicit models: GANs → WGAN — divergences, instability, mode collapse</td>
   <td><a href="https://arxiv.org/abs/1406.2661" class="paper-link">Goodfellow et al., GAN</a>;
       <a href="https://arxiv.org/abs/1701.07875" class="paper-link">Arjovsky et al., WGAN</a></td>
-  <td></td>
+  <td><span class="due">Proposal submission due — 11:59 PM</span></td>
 </tr>
 <tr>
   <td>Wed, Oct 21</td>
@@ -434,18 +428,45 @@ table.wide td:nth-child(3) { width: 34%; }
   <td></td>
 </tr>
 
-<tr class="wk"><td colspan="4"><b>Week 10</b> (Oct 26) — Diffusion; self-supervision begins</td></tr>
+<tr class="wk"><td colspan="4"><b>Week 10</b> (Oct 26) — Diffusion and flow matching</td></tr>
 <tr>
   <td>Mon, Oct 26</td>
-  <td>Score matching → denoising diffusion (DDPM) → flow matching</td>
+  <td>Score matching → denoising diffusion (DDPM)</td>
   <td><a href="https://probml.github.io/pml-book/book2.html" class="paper-link">PML-2</a> Ch. 25;
       <a href="https://www.jmlr.org/papers/v6/hyvarinen05a.html" class="paper-link">Hyvärinen, Score matching</a>;
       <a href="https://arxiv.org/abs/1907.05600" class="paper-link">Song &amp; Ermon, NCSN</a>;
-      <a href="https://arxiv.org/abs/2006.11239" class="paper-link">Ho et al., DDPM</a>;
-      <a href="https://arxiv.org/abs/2210.02747" class="paper-link">Lipman et al., Flow matching</a></td>
+      <a href="https://arxiv.org/abs/2006.11239" class="paper-link">Ho et al., DDPM</a></td>
   <td></td>
 </tr>
 
+<tr>
+  <td>Wed, Oct 28</td>
+  <td>Flow matching: continuous flows and vector fields</td>
+  <td><a href="https://arxiv.org/abs/2210.02747" class="paper-link">Lipman et al., Flow matching</a></td>
+  <td></td>
+</tr>
+
+<tr class="wk"><td colspan="4"><b>Week 11</b> (Nov 2) — In-class presentations</td></tr>
+<tr>
+  <td>Mon, Nov 02</td>
+  <td><b>In-class presentations</b></td>
+  <td></td>
+  <td><span class="due">Will be graded</span></td>
+</tr>
+<tr>
+  <td>Wed, Nov 04</td>
+  <td><b>In-class presentations</b></td>
+  <td></td>
+  <td><span class="due">Will be graded</span></td>
+</tr>
+
+<tr class="wk"><td colspan="4"><b>Week 12</b> (Nov 9) — Self-supervised learning</td></tr>
+<tr>
+  <td>Mon, Nov 09</td>
+  <td><b>No class — cancelled</b></td>
+  <td></td>
+  <td></td>
+</tr>
 <tr class="mod"><td colspan="4">
   <b>Module IV — Self-supervised learning</b><br>
   <span class="q">What can we learn without labels?</span>
@@ -454,25 +475,13 @@ table.wide td:nth-child(3) { width: 34%; }
   {% endcomment %}
 </td></tr>
 <tr>
-  <td>Wed, Oct 28</td>
-  <td>Contrastive self-supervision: Word2Vec → SimCLR</td>
+  <td>Wed, Nov 11</td>
+  <td>Contrastive self-supervision (Word2Vec, SimCLR), non-contrastive self-supervision (BYOL, VICReg — why representations do not collapse), and the Transformer as self-supervised pretraining</td>
   <td><a href="https://arxiv.org/abs/1301.3781" class="paper-link">Mikolov et al., Word2Vec</a>;
-      <a href="https://arxiv.org/abs/2002.05709" class="paper-link">Chen et al., SimCLR</a></td>
-  <td></td>
-</tr>
-
-<tr class="wk"><td colspan="4"><b>Week 11</b> (Nov 2) — Non-contrastive learning; attention</td></tr>
-<tr>
-  <td>Mon, Nov 02</td>
-  <td>Non-contrastive self-supervision: BYOL, VICReg — why representations do not collapse</td>
-  <td><a href="https://arxiv.org/abs/2006.07733" class="paper-link">Grill et al., BYOL</a>;
-      <a href="https://arxiv.org/abs/2105.04906" class="paper-link">Bardes et al., VICReg</a></td>
-  <td></td>
-</tr>
-<tr>
-  <td>Wed, Nov 04</td>
-  <td>Sequence models and attention: the Transformer as self-supervised pretraining</td>
-  <td><a href="https://arxiv.org/abs/1706.03762" class="paper-link">Vaswani et al., Attention is all you need</a></td>
+      <a href="https://arxiv.org/abs/2002.05709" class="paper-link">Chen et al., SimCLR</a>;
+      <a href="https://arxiv.org/abs/2006.07733" class="paper-link">Grill et al., BYOL</a>;
+      <a href="https://arxiv.org/abs/2105.04906" class="paper-link">Bardes et al., VICReg</a>;
+      <a href="https://arxiv.org/abs/1706.03762" class="paper-link">Vaswani et al., Attention is all you need</a></td>
   <td></td>
 </tr>
 
@@ -480,36 +489,16 @@ table.wide td:nth-child(3) { width: 34%; }
   <b>Module V — Scale and post-training</b><br>
   <span class="q">What changes when scale and post-training dominate?</span>
   {% comment %} instructor planning note — stripped from the built page
-  <span>Spine: Scaling laws → Chinchilla → FlashAttention → InstructGPT → DPO → R1</span>
+  <span>Spine: Scaling laws → Chinchilla → InstructGPT → DPO → R1</span>
   {% endcomment %}
 </td></tr>
-
-<tr class="wk"><td colspan="4"><b>Week 12</b> (Nov 9) — The economics of scale</td></tr>
-<tr>
-  <td>Mon, Nov 09</td>
-  <td>Scaling laws and compute-optimal training</td>
-  <td><a href="https://arxiv.org/abs/2001.08361" class="paper-link">Kaplan et al., Scaling laws</a>;
-      <a href="https://arxiv.org/abs/2203.15556" class="paper-link">Hoffmann et al., Chinchilla</a></td>
-  <td></td>
-</tr>
-<tr>
-  <td>Wed, Nov 11</td>
-  <td>How systems constraints shape model design: FlashAttention</td>
-  <td><a href="https://arxiv.org/abs/2205.14135" class="paper-link">Dao et al., FlashAttention</a></td>
-  <td></td>
-</tr>
-<tr>
-  <td>Fri, Nov 13</td>
-  <td></td>
-  <td></td>
-  <td><span class="due">Project midway report due</span></td>
-</tr>
-
-<tr class="wk"><td colspan="4"><b>Week 13</b> (Nov 16) — Post-training</td></tr>
+<tr class="wk"><td colspan="4"><b>Week 13</b> (Nov 16) — Scale and post-training</td></tr>
 <tr>
   <td>Mon, Nov 16</td>
-  <td>Post-training: RLHF → preference optimization</td>
-  <td><a href="https://arxiv.org/abs/2203.02155" class="paper-link">Ouyang et al., InstructGPT</a>;
+  <td>Scaling laws and compute-optimal training; post-training: RLHF → preference optimization</td>
+  <td><a href="https://arxiv.org/abs/2001.08361" class="paper-link">Kaplan et al., Scaling laws</a>;
+      <a href="https://arxiv.org/abs/2203.15556" class="paper-link">Hoffmann et al., Chinchilla</a>;
+      <a href="https://arxiv.org/abs/2203.02155" class="paper-link">Ouyang et al., InstructGPT</a>;
       <a href="https://arxiv.org/abs/2305.18290" class="paper-link">Rafailov et al., DPO</a></td>
   <td></td>
 </tr>
@@ -519,6 +508,12 @@ table.wide td:nth-child(3) { width: 34%; }
   <td><a href="https://arxiv.org/abs/2501.12948" class="paper-link">DeepSeek-R1</a></td>
   <td></td>
 </tr>
+<tr>
+  <td>Fri, Nov 20</td>
+  <td></td>
+  <td></td>
+  <td><span class="due">Project midway report due</span></td>
+</tr>
 
 <tr class="wk"><td colspan="4"><b>Week 14</b> (Nov 21–29) — Thanksgiving holidays</td></tr>
 <tr>
@@ -527,6 +522,7 @@ table.wide td:nth-child(3) { width: 34%; }
   <td></td>
   <td></td>
 </tr>
+
 
 <tr class="mod"><td colspan="4">
   <b>Module VI — Interpretability and evaluation</b><br>
@@ -629,8 +625,7 @@ The Transformer, whose next-token objective underlies the pretraining of modern 
 
 *What changes when scale and post-training dominate?*
 
-Scaling laws and compute-optimal training, and the systems constraints that shape model design
-(FlashAttention). Post-training: RLHF, direct preference optimization, which attains the same
+Scaling laws and compute-optimal training. Post-training: RLHF, direct preference optimization, which attains the same
 objective without a reinforcement-learning loop, and reasoning models trained against verifiable
 rewards.
 
