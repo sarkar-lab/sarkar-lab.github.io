@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" role="img" aria-label="Two aligned DNA sequences">
+<g font-family="monospace" font-size="14" font-weight="700" text-anchor="middle">
+<g fill="#0f766e"><text x="14" y="25">A</text><text x="34" y="25">C</text><text x="54" y="25">G</text><text x="74" y="25">T</text><text x="94" y="25">A</text></g>
+<g fill="#0f766e"><text x="14" y="65">A</text><text x="34" y="65">C</text><text x="54" y="65" fill="#d97706">C</text><text x="74" y="65">T</text><text x="94" y="65">A</text></g></g>
+<g stroke="#5eead4" stroke-width="2"><path d="M14 31V51M34 31V51M74 31V51M94 31V51"/></g>
+<path d="M54 31V51" stroke="#d97706" stroke-width="2" stroke-dasharray="3 3"/>
+</svg>

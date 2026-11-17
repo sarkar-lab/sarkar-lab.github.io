@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" role="img" aria-label="Cells grouped into three clusters">
+<g fill="#7c3aed"><circle cx="24" cy="26" r="7"/><circle cx="38" cy="38" r="7"/><circle cx="22" cy="46" r="7"/></g>
+<g fill="#d946ef"><circle cx="70" cy="18" r="7"/><circle cx="84" cy="28" r="7"/><circle cx="66" cy="34" r="7"/></g>
+<g fill="#6366f1"><circle cx="82" cy="58" r="7"/><circle cx="98" cy="50" r="7"/><circle cx="96" cy="66" r="7"/></g>
+<g fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="3 3"><ellipse cx="30" cy="37" rx="22" ry="20"/><ellipse cx="75" cy="27" rx="20" ry="17"/><ellipse cx="90" cy="58" rx="20" ry="16"/></g>
+</svg>
