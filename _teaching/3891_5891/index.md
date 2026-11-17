@@ -57,7 +57,7 @@ permalink: /courses/3891_5891/
 <div class="fcb" markdown="1">
 
 <div class="hero">
-  <img src="{{ '/assets/img/cc3891/hero.svg' | relative_url }}" alt="Illustration: a blood sample and a tissue biopsy are processed and sequenced, then merge into computation, understanding disease and drug response">
+  <img src="{{ '/assets/img/cc3891/hero.svg' | relative_url }}" alt="Illustration: DNA, RNA and protein are extracted from a blood sample and measured, while a tissue biopsy is stained and imaged; both feed into computation, understanding disease and drug response">
 </div>
 
 <p class="lead">From DNA to cells to disease: understanding biology through computation.</p>
