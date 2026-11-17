@@ -40,12 +40,24 @@ permalink: /courses/3891_5891/
   .fcb .reg-card .num { font-size:2rem; font-weight:800; }
   .fcb .reg-card .lvl { color:#555; }
   .fcb .placeholder { background:#fff3cd; border:1px dashed #b58900; border-radius:6px; padding:.1rem .45rem; font-size:.9em; }
+  .fcb .themes { align-items:start; }
+  .fcb details.theme > summary { list-style:none; cursor:pointer; }
+  .fcb details.theme > summary::-webkit-details-marker { display:none; }
+  .fcb details.theme > summary:focus-visible { outline:3px solid var(--c); outline-offset:-3px; }
+  .fcb details.theme { position:relative; }
+  .fcb .chev { position:absolute; top:.75rem; right:.75rem; width:28px; height:28px; border-radius:50%; background:#fff; border:1.5px solid var(--c); }
+  .fcb .chev::after { content:""; position:absolute; left:9px; top:7px; width:7px; height:7px; border:solid var(--c); border-width:0 2px 2px 0; transform:rotate(45deg); transition:transform .2s; }
+  .fcb details[open] .chev::after { top:11px; transform:rotate(-135deg); }
+  .fcb .more { padding:0 1.25rem 1.25rem; font-size:.95rem; border-top:1px dashed #e9dccb; }
+  .fcb .more .flow { width:100%; height:auto; margin-top:1rem; border-radius:10px; }
+  .fcb .more .cap { font-size:.8rem; color:#666; margin:.25rem 0 .75rem; }
+  .fcb .more .links { margin-bottom:0; }
 </style>
 
 <div class="fcb" markdown="1">
 
 <div class="hero">
-  <img src="{{ '/assets/img/cc3891/hero.svg' | relative_url }}" alt="Illustration: DNA, a cluster of cells, a tissue map and a network, connected by a dotted line">
+  <img src="{{ '/assets/img/cc3891/hero.svg' | relative_url }}" alt="Illustration of the pipeline from sample, to DNA extraction, to sequencing, to computation, to understanding disease, to drug response">
 </div>
 
 <p class="lead">From DNA to cells to disease: understanding biology through computation.</p>
@@ -79,50 +91,86 @@ it. You will work with a few widely used Python tools along the way; the tools a
 explore the ideas, not as separate subjects to master.
 
 <div class="themes">
-  <div class="theme t1">
-    <img src="{{ '/assets/img/cc3891/genomes.svg' | relative_url }}" alt="Two aligned DNA sequences with one mismatch">
-    <div class="body">
-      <h3>Explore genomes</h3>
-      <p class="bq">How similar are two stretches of DNA, and how do we piece a genome together from short reads?</p>
-      <dl>
-        <dt>Concepts</dt><dd>DNA sequences, alignment, genome assembly, dynamic programming</dd>
-        <dt>Tools</dt><dd>Biopython, BLAST, and a sampling of aligners and assemblers (e.g. minimap2, BWA, MAFFT, SPAdes)</dd>
-      </dl>
+  <details class="theme t1">
+    <summary>
+      <img src="{{ '/assets/img/cc3891/genomes.svg' | relative_url }}" alt="Two aligned DNA sequences with one mismatch">
+      <div class="body">
+        <h3>Explore genomes</h3>
+        <p class="bq">How similar are two stretches of DNA, and how do we piece a genome together from short reads?</p>
+        <dl>
+          <dt>Concepts</dt><dd>DNA sequences, alignment, genome assembly, dynamic programming</dd>
+          <dt>Tools</dt><dd>Biopython, BLAST, and a sampling of aligners and assemblers (e.g. minimap2, BWA, MAFFT, SPAdes)</dd>
+        </dl>
+        <span class="chev" aria-hidden="true"></span>
+      </div>
+    </summary>
+    <div class="more">
+      <img class="flow" src="{{ '/assets/img/cc3891/genomes-flow.svg' | relative_url }}" alt="Animated schematic of the explore genomes workflow">
+      <p class="cap">Schematic illustration, not real data.</p>
+      <p>Sequencers give us millions of short, noisy reads. We align them against each other or a reference to find where they match, assemble overlapping reads into longer stretches, and then ask what the differences mean. Dynamic programming is the idea that makes careful alignment efficient.</p>
+      <p class="links">Go deeper: <a href="https://biopython.org/DIST/docs/tutorial/Tutorial.html">Biopython tutorial</a> · <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi">NCBI BLAST</a></p>
     </div>
-  </div>
-  <div class="theme t2">
-    <img src="{{ '/assets/img/cc3891/cells.svg' | relative_url }}" alt="Cells grouped into three clusters">
-    <div class="body">
-      <h3>Discover cell types</h3>
-      <p class="bq">Which cells in a sample are alike, and how many kinds are there?</p>
-      <dl>
-        <dt>Concepts</dt><dd>Gene expression, PCA, clustering, UMAP</dd>
-        <dt>Tools</dt><dd>Scanpy</dd>
-      </dl>
+  </details>
+  <details class="theme t2">
+    <summary>
+      <img src="{{ '/assets/img/cc3891/cells.svg' | relative_url }}" alt="Cells grouped into three clusters">
+      <div class="body">
+        <h3>Discover cell types</h3>
+        <p class="bq">Which cells in a sample are alike, and how many kinds are there?</p>
+        <dl>
+          <dt>Concepts</dt><dd>Gene expression, PCA, clustering, UMAP</dd>
+          <dt>Tools</dt><dd>Scanpy</dd>
+        </dl>
+        <span class="chev" aria-hidden="true"></span>
+      </div>
+    </summary>
+    <div class="more">
+      <img class="flow" src="{{ '/assets/img/cc3891/cells-flow.svg' | relative_url }}" alt="Animated schematic of the discover cell types workflow">
+      <p class="cap">Schematic illustration, not real data.</p>
+      <p>Single-cell data is a table of how active each gene is in each cell. We compress it to a few informative axes with PCA, group similar cells by clustering, and draw the result as a 2-D UMAP map you can read against known biology.</p>
+      <p class="links">Go deeper: <a href="https://www.sc-best-practices.org/preprocessing-visualization/dimensionality-reduction">Dimensionality reduction</a> · <a href="https://www.sc-best-practices.org/cellular-structure/clustering">Clustering</a></p>
     </div>
-  </div>
-  <div class="theme t3">
-    <img src="{{ '/assets/img/cc3891/tissues.svg' | relative_url }}" alt="A tissue with cells connected to their neighbors">
-    <div class="body">
-      <h3>Map tissues</h3>
-      <p class="bq">Does where a cell sits tell us something about what it does?</p>
-      <dl>
-        <dt>Concepts</dt><dd>Spatial organization, graphs, cellular neighborhoods</dd>
-        <dt>Tools</dt><dd>Squidpy</dd>
-      </dl>
+  </details>
+  <details class="theme t3">
+    <summary>
+      <img src="{{ '/assets/img/cc3891/tissues.svg' | relative_url }}" alt="A tissue with cells connected to their neighbors">
+      <div class="body">
+        <h3>Map tissues</h3>
+        <p class="bq">Does where a cell sits tell us something about what it does?</p>
+        <dl>
+          <dt>Concepts</dt><dd>Spatial organization, graphs, cellular neighborhoods</dd>
+          <dt>Tools</dt><dd>Squidpy</dd>
+        </dl>
+        <span class="chev" aria-hidden="true"></span>
+      </div>
+    </summary>
+    <div class="more">
+      <img class="flow" src="{{ '/assets/img/cc3891/tissues-flow.svg' | relative_url }}" alt="Animated schematic of the map tissues workflow">
+      <p class="cap">Schematic illustration, not real data.</p>
+      <p>Spatial experiments keep each cell's position. We connect nearby cells into a graph, summarize who lives next to whom, and look for neighborhoods and patterns that only appear once location is taken into account.</p>
+      <p class="links">Go deeper: <a href="https://www.sc-best-practices.org/spatial/introduction">Spatial omics intro</a> · <a href="https://www.sc-best-practices.org/spatial/neighborhood">Neighborhood analysis</a></p>
     </div>
-  </div>
-  <div class="theme t4">
-    <img src="{{ '/assets/img/cc3891/models.svg' | relative_url }}" alt="A small neural network">
-    <div class="body">
-      <h3>Build predictive models</h3>
-      <p class="bq">Can a model learn to tell healthy from diseased from the data alone?</p>
-      <dl>
-        <dt>Concepts</dt><dd>Classification, representation learning</dd>
-        <dt>Tools</dt><dd>scikit-learn, introductory PyTorch</dd>
-      </dl>
+  </details>
+  <details class="theme t4">
+    <summary>
+      <img src="{{ '/assets/img/cc3891/models.svg' | relative_url }}" alt="A small neural network">
+      <div class="body">
+        <h3>Build predictive models</h3>
+        <p class="bq">Can a model learn to tell healthy from diseased from the data alone?</p>
+        <dl>
+          <dt>Concepts</dt><dd>Classification, representation learning</dd>
+          <dt>Tools</dt><dd>scikit-learn, introductory PyTorch</dd>
+        </dl>
+        <span class="chev" aria-hidden="true"></span>
+      </div>
+    </summary>
+    <div class="more">
+      <img class="flow" src="{{ '/assets/img/cc3891/models-flow.svg' | relative_url }}" alt="Animated schematic of the build predictive models workflow">
+      <p class="cap">Schematic illustration, not real data.</p>
+      <p>We turn samples into numbers, train a classifier on labeled examples, and test it on data it has not seen. Representation learning asks whether a model can discover useful features by itself, and we practice checking whether a result can be trusted.</p>
+      <p class="links">Go deeper: <a href="https://scikit-learn.org/stable/">scikit-learn</a> · <a href="https://pytorch.org/tutorials/beginner/basics/intro.html">PyTorch basics</a></p>
     </div>
-  </div>
+  </details>
 </div>
 
 ## What you will learn
